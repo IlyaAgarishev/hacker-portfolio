@@ -24,6 +24,9 @@ class Terminal extends Component {
           this.terminal = ref;
         }}
         readOnly
+        onMouseDown={e => {
+          this.props.simpleDragAndDrop(this.terminal, e);
+        }}
       />
     );
   }

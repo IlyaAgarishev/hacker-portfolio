@@ -1,9 +1,14 @@
 .terminal {
-  width: 700px;
-  height: 500px;
+  /* width: 600px;
+  height: 300px; */
+  width: 40%;
+  height: 300px;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 10px;
   background: black;
   color: rgb(0, 255, 0);
-  font-size: 1.3em;
+  /* font-size: 1.3em; */
   resize: none;
   outline: none;
   border: 1px solid rgb(0, 255, 0);
