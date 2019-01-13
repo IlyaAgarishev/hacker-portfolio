@@ -1,0 +1,16 @@
+.hacking-fbi {
+  color: rgb(241, 0, 0);
+  position: absolute;
+  top: 65%;
+  left: 35%;
+  font-size: 30px;
+  background: black;
+  border: 1px solid rgb(0, 255, 0);
+  padding: 10px;
+  width: 31%;
+  border-top: 20px solid rgb(0, 255, 0);
+}
+
+.hacking-fbi-text {
+  text-align: center;
+}

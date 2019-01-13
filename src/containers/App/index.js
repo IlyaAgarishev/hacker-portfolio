@@ -1,21 +1,50 @@
 import React, { Component } from 'react';
 import './index.css';
 import Terminal from '../Terminal';
+import TerminalAuto from '../TerminalAuto';
+import HackingFbi from '../HackingFbi';
+import Projects from '../Projects';
 import hacker from '../../img/ilyahacker.png';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hackInt: 0 };
+  }
+
+  setHackInterval = hackInt => {
+    this.setState({ hackInt: hackInt });
+  };
+
   simpleDragAndDrop = (item, e) => {
-    item.style.zIndex = 1000;
-    item.ondragstart = function() {
-      return false;
-    };
     var coords = getCoords(item);
     var shiftX = e.pageX - coords.left;
     var shiftY = e.pageY - coords.top;
-    let moveAt = e => {
+
+    // item.style.position = 'absolute';
+    document.body.appendChild(item);
+    moveAt(e);
+
+    item.style.zIndex = 1000;
+
+    function moveAt(e) {
       item.style.left = e.pageX - shiftX + 'px';
       item.style.top = e.pageY - shiftY + 'px';
+    }
+
+    document.onmousemove = function(e) {
+      moveAt(e);
     };
+
+    item.onmouseup = function() {
+      document.onmousemove = null;
+      item.onmouseup = null;
+    };
+
+    item.ondragstart = function() {
+      return false;
+    };
+
     function getCoords(elem) {
       var box = elem.getBoundingClientRect();
       return {
@@ -23,33 +52,39 @@ class App extends Component {
         left: box.left + window.pageXOffset
       };
     }
-    moveAt(e);
-    item.onmousemove = e => {
-      moveAt(e);
-    };
-
-    item.onmouseup = e => {
-      item.onmousemove = null;
-      item.onmouseup = null;
-    };
   };
 
   render() {
     return (
       <div className="app">
-        <Terminal simpleDragAndDrop={this.simpleDragAndDrop} />
-        <img src="https://i.gifer.com/C6Zz.gif" alt="" className="globe" />
-        <img
-          src={hacker}
-          alt=""
-          className="ilyahacker"
-          ref={ref => {
-            this.ilyahacker = ref;
-          }}
-          onMouseDown={e => {
-            this.simpleDragAndDrop(this.ilyahacker, e);
-          }}
+        <Terminal
+          simpleDragAndDrop={this.simpleDragAndDrop}
+          setHackInterval={this.setHackInterval}
         />
+
+        {this.state.hackInt > 100 ? (
+          <HackingFbi simpleDragAndDrop={this.simpleDragAndDrop} />
+        ) : null}
+        {this.state.hackInt > 50 ? (
+          <TerminalAuto simpleDragAndDrop={this.simpleDragAndDrop} />
+        ) : null}
+        <img src="https://i.gifer.com/C6Zz.gif" alt="" className="globe" />
+        {this.state.hackInt > 150 ? (
+          <img
+            src={hacker}
+            alt=""
+            className="ilyahacker"
+            ref={ref => {
+              this.ilyahacker = ref;
+            }}
+            onMouseDown={e => {
+              this.simpleDragAndDrop(this.ilyahacker, e);
+            }}
+          />
+        ) : null}
+
+        {this.state.hackInt > 160 ? <Projects simpleDragAndDrop={this.simpleDragAndDrop} /> : null}
+
         <div className="footer">
           <a
             href="https://github.com/IlyaAgarishev/hacker-portfolio"
