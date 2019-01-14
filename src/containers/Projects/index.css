@@ -1,13 +1,21 @@
-.projects {
+.projects-wrapper {
   width: 25%;
   position: absolute;
+  display: flex;
+  flex-direction: column;
   margin-top: 10px;
   margin-right: 10px;
   right: 0;
-  /* height: 500px; */
+}
+
+.projects-border-top {
+  height: 20px;
+  background: white;
+}
+
+.projects {
   background: #063b71;
   border: 1px solid white;
-  border-top: 20px solid white;
   color: #f8d412;
   font-size: 30px;
   font-weight: 900;
