@@ -1,11 +1,11 @@
-.terminal {
+.terminal-auto {
   /* width: 600px;
   height: 300px; */
   width: 40%;
   height: 300px;
   position: absolute;
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
   background: black;
   color: rgb(0, 255, 0);
   /* font-size: 1.3em; */
@@ -16,6 +16,6 @@
   border-top: 20px solid rgb(0, 255, 0);
 }
 
-.terminal::-webkit-scrollbar {
+.terminal-auto::-webkit-scrollbar {
   display: none;
 }

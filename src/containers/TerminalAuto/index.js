@@ -18,7 +18,7 @@ class Terminal extends Component {
   render() {
     return (
       <textarea
-        className="terminal"
+        className="terminal-auto"
         placeholder={'Start typing...'}
         ref={ref => {
           this.terminal = ref;

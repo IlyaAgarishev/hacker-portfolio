@@ -23,10 +23,10 @@ class Terminal extends Component {
       <textarea
         className="terminal"
         placeholder={'Start typing...'}
+        readOnly
         ref={ref => {
           this.terminal = ref;
         }}
-        readOnly
         onMouseDown={e => {
           this.props.simpleDragAndDrop(this.terminal, e);
         }}

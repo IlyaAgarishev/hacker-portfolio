@@ -17,9 +17,9 @@ class App extends Component {
   };
 
   simpleDragAndDrop = (item, e) => {
-    var coords = getCoords(item);
-    var shiftX = e.pageX - coords.left;
-    var shiftY = e.pageY - coords.top;
+    let coords = getCoords(item);
+    let shiftX = e.pageX - coords.left;
+    let shiftY = e.pageY - coords.top;
 
     // item.style.position = 'absolute';
     document.body.appendChild(item);
@@ -36,7 +36,12 @@ class App extends Component {
       moveAt(e);
     };
 
-    item.onmouseup = function() {
+    item.onmouseup = function(e) {
+      document.onmousemove = null;
+      item.onmouseup = null;
+    };
+
+    document.onmouseup = function() {
       document.onmousemove = null;
       item.onmouseup = null;
     };
@@ -46,7 +51,7 @@ class App extends Component {
     };
 
     function getCoords(elem) {
-      var box = elem.getBoundingClientRect();
+      let box = elem.getBoundingClientRect();
       return {
         top: box.top + window.pageYOffset,
         left: box.left + window.pageXOffset
@@ -62,28 +67,24 @@ class App extends Component {
           setHackInterval={this.setHackInterval}
         />
 
-        {this.state.hackInt > 100 ? (
-          <HackingFbi simpleDragAndDrop={this.simpleDragAndDrop} />
-        ) : null}
-        {this.state.hackInt > 50 ? (
-          <TerminalAuto simpleDragAndDrop={this.simpleDragAndDrop} />
-        ) : null}
+        <HackingFbi simpleDragAndDrop={this.simpleDragAndDrop} />
+        <TerminalAuto simpleDragAndDrop={this.simpleDragAndDrop} />
         <img src="https://i.gifer.com/C6Zz.gif" alt="" className="globe" />
-        {this.state.hackInt > 150 ? (
-          <img
-            src={hacker}
-            alt=""
-            className="ilyahacker"
-            ref={ref => {
-              this.ilyahacker = ref;
-            }}
-            onMouseDown={e => {
-              this.simpleDragAndDrop(this.ilyahacker, e);
-            }}
-          />
-        ) : null}
+        <img
+          src={hacker}
+          alt=""
+          className="ilyahacker"
+          ref={ref => {
+            this.ilyahacker = ref;
+          }}
+          onMouseDown={e => {
+            this.simpleDragAndDrop(this.ilyahacker, e);
+          }}
+        />
 
-        {this.state.hackInt > 160 ? <Projects simpleDragAndDrop={this.simpleDragAndDrop} /> : null}
+        <Projects simpleDragAndDrop={this.simpleDragAndDrop} />
+
+        <div className="private-data">wwow</div>
 
         <div className="footer">
           <a
