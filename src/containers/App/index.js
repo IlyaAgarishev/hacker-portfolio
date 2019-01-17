@@ -5,6 +5,7 @@ import TerminalAuto from '../TerminalAuto';
 import HackingFbi from '../HackingFbi';
 import Projects from '../Projects';
 import hacker from '../../img/ilyahacker.png';
+import PrivateData from '../PrivateData';
 
 class App extends Component {
   constructor(props) {
@@ -84,8 +85,7 @@ class App extends Component {
 
         <Projects simpleDragAndDrop={this.simpleDragAndDrop} />
 
-        <div className="private-data">wwow</div>
-
+        <PrivateData simpleDragAndDrop={this.simpleDragAndDrop} />
         <div className="footer">
           <a
             href="https://github.com/IlyaAgarishev/hacker-portfolio"

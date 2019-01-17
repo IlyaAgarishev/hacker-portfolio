@@ -1,42 +1,21 @@
-.projects {
-  width: 25%;
+.private-data {
+  background: #063b71;
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  margin-top: 10px;
-  margin-right: 10px;
-  right: 0;
-  /* height: 500px; */
-  background: black;
-  border: 1px solid #00ff00;
-  border-top: 20px solid #00ff00;
-  color: #00ff00;
-  font-size: 30px;
-  font-weight: 900;
+  top: 50%;
+  left: 60%;
+  border: 1px solid white;
 }
 
-.projects-text {
-  text-align: center;
-  border-bottom: 2px solid #00ff00;
+.private-data-border {
+  border-top: 20px solid white;
+}
+
+.private-data-list {
   padding: 10px;
-  color: red;
 }
-
-.projects-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.project {
-  width: 50%;
-  height: 125px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 15px;
-  color: #00ff00;
-}
-
-.project:hover {
-  background: #00ff00;
-  color: black;
-  cursor: pointer;
+.icon {
+  width: 40px;
+  margin-right: 10px;
 }
