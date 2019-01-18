@@ -1,21 +1,26 @@
 .terminal {
-  /* width: 600px;
-  height: 300px; */
   width: 40%;
-  height: 300px;
+  height: 38%;
   position: absolute;
   margin-top: 20px;
   margin-left: 20px;
   background: black;
   color: rgb(0, 255, 0);
-  /* font-size: 1.3em; */
   resize: none;
   outline: none;
   border: 1px solid rgb(0, 255, 0);
   padding: 10px;
   border-top: 20px solid rgb(0, 255, 0);
+  cursor: auto;
 }
 
 .terminal::-webkit-scrollbar {
   display: none;
+}
+
+@media only screen and (max-width: 975px) {
+  .terminal {
+    border-top: 10px solid rgb(0, 255, 0);
+    height: 30%;
+  }
 }

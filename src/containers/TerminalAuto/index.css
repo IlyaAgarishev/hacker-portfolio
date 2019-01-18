@@ -1,21 +1,27 @@
 .terminal-auto {
-  /* width: 600px;
-  height: 300px; */
-  width: 40%;
-  height: 300px;
+  width: 30%;
+  top: 47%;
+  height: 35%;
   position: absolute;
   margin-top: 20px;
   margin-left: 20px;
   background: black;
   color: rgb(0, 255, 0);
-  /* font-size: 1.3em; */
   resize: none;
   outline: none;
   border: 1px solid rgb(0, 255, 0);
   padding: 10px;
   border-top: 20px solid rgb(0, 255, 0);
+  cursor: auto;
 }
 
 .terminal-auto::-webkit-scrollbar {
   display: none;
+}
+
+@media only screen and (max-width: 975px) {
+  .terminal-auto {
+    border-top: 10px solid rgb(0, 255, 0);
+    height: 25%;
+  }
 }

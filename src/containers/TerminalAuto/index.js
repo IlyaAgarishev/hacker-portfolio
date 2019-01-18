@@ -6,12 +6,12 @@ class Terminal extends Component {
   componentDidMount() {
     let i = 0;
     setInterval(() => {
-      this.terminal.value += codeTwo.slice(i, i + 5);
+      this.terminalAuto.value += codeTwo.slice(i, i + 5);
       i += 5;
       if (i > codeTwo.length) {
         i = 0;
       }
-      this.terminal.scrollTop = this.terminal.scrollHeight;
+      this.terminalAuto.scrollTop = this.terminalAuto.scrollHeight;
     }, 1);
   }
 
@@ -21,12 +21,14 @@ class Terminal extends Component {
         className="terminal-auto"
         placeholder={'Start typing...'}
         ref={ref => {
-          this.terminal = ref;
+          this.terminalAuto = ref;
         }}
-        style={{ width: '30%', top: '47%', height: '270px' }}
         readOnly
         onMouseDown={e => {
-          this.props.simpleDragAndDrop(this.terminal, e);
+          e.preventDefault();
+          if (this.props.dndPermission) {
+            this.props.simpleDragAndDrop(this.terminalAuto, e);
+          }
         }}
       />
     );

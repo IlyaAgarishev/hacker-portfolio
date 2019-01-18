@@ -22,6 +22,7 @@
 }
 
 .projects-text {
+  user-select: none;
   text-align: center;
   border-bottom: 2px solid #f8d412;
   padding: 10px;
@@ -48,4 +49,20 @@
   background: #f8d412;
   color: #063b71;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 975px) {
+  .projects-border-top {
+    height: 10px;
+  }
+  .project {
+    height: 80px;
+  }
+
+  .projects-text {
+    font-size: 20px;
+  }
+  .project {
+    font-size: 15px;
+  }
 }

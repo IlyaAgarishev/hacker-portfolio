@@ -28,7 +28,10 @@ class Terminal extends Component {
           this.terminal = ref;
         }}
         onMouseDown={e => {
-          this.props.simpleDragAndDrop(this.terminal, e);
+          e.preventDefault();
+          if (this.props.dndPermission) {
+            this.props.simpleDragAndDrop(this.terminal, e);
+          }
         }}
       />
     );

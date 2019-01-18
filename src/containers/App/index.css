@@ -28,7 +28,7 @@
 }
 
 .globe {
-  width: 150px;
+  width: 10%;
   position: absolute;
   top: 45%;
   left: 45%;
@@ -41,4 +41,10 @@
   margin-top: 20px;
   border: 1px solid rgb(255, 255, 255);
   border-top: 20px solid rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 975px) {
+  .ilyahacker {
+    border-top: 10px solid rgb(255, 255, 255);
+  }
 }

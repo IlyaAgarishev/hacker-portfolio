@@ -9,8 +9,24 @@
   padding: 10px;
   width: 31%;
   border-top: 20px solid rgb(0, 255, 0);
+  user-select: none;
 }
 
 .hacking-fbi-text {
   text-align: center;
+  user-select: none;
+}
+
+@media only screen and (max-width: 1245px) {
+  .hacking-fbi {
+    left: 40%;
+    font-size: 25px !important;
+  }
+}
+
+@media only screen and (max-width: 975px) {
+  .hacking-fbi {
+    border-top: 10px solid rgb(0, 255, 0);
+    font-size: 15px !important;
+  }
 }

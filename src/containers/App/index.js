@@ -61,42 +61,61 @@ class App extends Component {
   };
 
   render() {
-    return (
-      <div className="app">
-        <Terminal
-          simpleDragAndDrop={this.simpleDragAndDrop}
-          setHackInterval={this.setHackInterval}
-        />
-
-        <HackingFbi simpleDragAndDrop={this.simpleDragAndDrop} />
-        <TerminalAuto simpleDragAndDrop={this.simpleDragAndDrop} />
-        <img src="https://i.gifer.com/C6Zz.gif" alt="" className="globe" />
-        <img
-          src={hacker}
-          alt=""
-          className="ilyahacker"
-          ref={ref => {
-            this.ilyahacker = ref;
-          }}
-          onMouseDown={e => {
-            this.simpleDragAndDrop(this.ilyahacker, e);
-          }}
-        />
-
-        <Projects simpleDragAndDrop={this.simpleDragAndDrop} />
-
-        <PrivateData simpleDragAndDrop={this.simpleDragAndDrop} />
-        <div className="footer">
-          <a
-            href="https://github.com/IlyaAgarishev/hacker-portfolio"
-            target="_blank"
-            className="github-link"
-          >
-            github
-          </a>
+    if (window.innerWidth < 775 || navigator.userAgent.match(/iPad/i) != null) {
+      return (
+        <div className="app" style={{ display: 'flex', flexDirection: 'column' }}>
+          <img
+            src={hacker}
+            alt=""
+            className="ilyahacker"
+            ref={ref => {
+              this.ilyahacker = ref;
+            }}
+            style={{ position: 'relative', top: 0, left: 0, width: '100%', margin: 0 }}
+          />
+          <PrivateData transform={true} />
+          <Projects transform={true} />
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="app">
+          <Terminal
+            simpleDragAndDrop={this.simpleDragAndDrop}
+            dndPermission={true}
+            setHackInterval={this.setHackInterval}
+          />
+
+          <HackingFbi simpleDragAndDrop={this.simpleDragAndDrop} dndPermission={true} />
+          <TerminalAuto simpleDragAndDrop={this.simpleDragAndDrop} dndPermission={true} />
+          <img src="https://i.gifer.com/C6Zz.gif" alt="" className="globe" />
+          <img
+            src={hacker}
+            alt=""
+            className="ilyahacker"
+            ref={ref => {
+              this.ilyahacker = ref;
+            }}
+            onMouseDown={e => {
+              this.simpleDragAndDrop(this.ilyahacker, e);
+            }}
+          />
+
+          <Projects simpleDragAndDrop={this.simpleDragAndDrop} dndPermission={true} />
+
+          <PrivateData simpleDragAndDrop={this.simpleDragAndDrop} dndPermission={true} />
+          <div className="footer">
+            <a
+              href="https://github.com/IlyaAgarishev/hacker-portfolio"
+              target="_blank"
+              className="github-link"
+            >
+              github
+            </a>
+          </div>
+        </div>
+      );
+    }
   }
 }
 

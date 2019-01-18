@@ -3,9 +3,16 @@ import './index.css';
 
 class Projects extends Component {
   render() {
+    let style;
+    if (this.props.transform) {
+      style = { marginTop: '10px', width: '100%', position: 'relative', background: 'red' };
+      document.body.style.overflow = 'visible';
+    }
+
     return (
       <div
         className="projects-wrapper"
+        style={style}
         ref={ref => {
           this.projectsWrapper = ref;
         }}
@@ -13,14 +20,18 @@ class Projects extends Component {
         <div
           className="projects-border-top"
           onMouseDown={e => {
-            this.props.simpleDragAndDrop(this.projectsWrapper, e);
+            if (this.props.dndPermission) {
+              this.props.simpleDragAndDrop(this.projectsWrapper, e);
+            }
           }}
         />
         <div className="projects">
           <div
             className="projects-text"
             onMouseDown={e => {
-              this.props.simpleDragAndDrop(this.projectsWrapper, e);
+              if (this.props.dndPermission) {
+                this.props.simpleDragAndDrop(this.projectsWrapper, e);
+              }
             }}
           >
             ILYA'S PROJECTS

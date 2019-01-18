@@ -16,6 +16,18 @@
   padding: 10px;
 }
 .icon {
-  width: 40px;
-  margin-right: 10px;
+  width: 30px;
+  margin-right: 15px;
+}
+
+@media only screen and (max-width: 975px) {
+  .private-data-border {
+    border-top: 10px solid white;
+  }
+  .private-data {
+    top: 60%;
+  }
+  .icon {
+    width: 20px;
+  }
 }

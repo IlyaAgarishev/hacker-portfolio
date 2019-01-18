@@ -19,7 +19,9 @@ class HackingFbi extends Component {
     return (
       <div
         onMouseDown={e => {
-          this.props.simpleDragAndDrop(this.hackingFbi, e);
+          if (this.props.dndPermission) {
+            this.props.simpleDragAndDrop(this.hackingFbi, e);
+          }
         }}
         className="hacking-fbi"
         ref={ref => {
