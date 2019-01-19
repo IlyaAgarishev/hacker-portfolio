@@ -43,9 +43,7 @@ class PrivateData extends Component {
         <div
           className="private-data-border"
           onMouseDown={e => {
-            if (this.props.dndPermission) {
-              this.props.simpleDragAndDrop(this.privateData, e);
-            }
+            this.props.simpleDragAndDrop(this.privateData, e, this.props.dndPermission);
           }}
         />
         <div className="private-data-list" style={style.privateDataList}>

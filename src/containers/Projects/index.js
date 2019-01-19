@@ -9,6 +9,8 @@ class Projects extends Component {
       document.body.style.overflow = 'visible';
     }
 
+    // https://api.github.com/repos/IlyaAgarishev/qiqi
+
     return (
       <div
         className="projects-wrapper"
@@ -20,9 +22,7 @@ class Projects extends Component {
         <div
           className="projects-border-top"
           onMouseDown={e => {
-            if (this.props.dndPermission) {
-              this.props.simpleDragAndDrop(this.projectsWrapper, e);
-            }
+            this.props.simpleDragAndDrop(this.projectsWrapper, e, this.props.dndPermission);
           }}
         />
         <div className="projects">

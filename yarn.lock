@@ -6883,7 +6883,7 @@ react-dev-utils@^7.0.1:
     strip-ansi "4.0.0"
     text-table "0.2.0"
 
-react-dom@16.7.0:
+react-dom@^16.7.0:
   version "16.7.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.7.0.tgz#a17b2a7ca89ee7390bc1ed5eb81783c7461748b8"
   dependencies:
@@ -6895,6 +6895,10 @@ react-dom@16.7.0:
 react-error-overlay@^5.1.2:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.1.2.tgz#888957b884d4b25b083a82ad550f7aad96585394"
+
+react-h5-audio-player@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-h5-audio-player/-/react-h5-audio-player-1.1.0.tgz#a75ad4b9a7f4d33ee722843ae7576d83147b8e99"
 
 react-scripts@2.1.3:
   version "2.1.3"
@@ -6950,7 +6954,7 @@ react-scripts@2.1.3:
   optionalDependencies:
     fsevents "1.2.4"
 
-react@16.7.0:
+react@^16.7.0:
   version "16.7.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.7.0.tgz#b674ec396b0a5715873b350446f7ea0802ab6381"
   dependencies:

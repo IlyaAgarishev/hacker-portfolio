@@ -43,8 +43,8 @@
   border-top: 20px solid rgb(255, 255, 255);
 }
 
-@media only screen and (max-width: 975px) {
+/* @media only screen and (max-width: 975px) {
   .ilyahacker {
     border-top: 10px solid rgb(255, 255, 255);
   }
-}
+} */

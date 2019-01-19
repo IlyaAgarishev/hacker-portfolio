@@ -20,7 +20,7 @@
   margin-right: 15px;
 }
 
-@media only screen and (max-width: 975px) {
+/* @media only screen and (max-width: 975px) {
   .private-data-border {
     border-top: 10px solid white;
   }
@@ -30,4 +30,4 @@
   .icon {
     width: 20px;
   }
-}
+} */

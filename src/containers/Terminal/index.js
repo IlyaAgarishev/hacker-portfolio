@@ -20,20 +20,21 @@ class Terminal extends Component {
 
   render() {
     return (
-      <textarea
-        className="terminal"
-        placeholder={'Start typing...'}
-        readOnly
-        ref={ref => {
-          this.terminal = ref;
-        }}
-        onMouseDown={e => {
-          e.preventDefault();
-          if (this.props.dndPermission) {
-            this.props.simpleDragAndDrop(this.terminal, e);
-          }
-        }}
-      />
+      <div>
+        <textarea
+          className="terminal"
+          placeholder={'Start typing...'}
+          readOnly
+          ref={ref => {
+            this.terminal = ref;
+          }}
+          onMouseDown={e => {
+            e.preventDefault();
+            this.props.simpleDragAndDrop(this.terminal, e, this.props.dndPermission);
+            this.terminal.scrollTop = this.terminal.scrollHeight;
+          }}
+        />
+      </div>
     );
   }
 }

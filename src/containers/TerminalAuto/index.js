@@ -26,9 +26,7 @@ class Terminal extends Component {
         readOnly
         onMouseDown={e => {
           e.preventDefault();
-          if (this.props.dndPermission) {
-            this.props.simpleDragAndDrop(this.terminalAuto, e);
-          }
+          this.props.simpleDragAndDrop(this.terminalAuto, e, this.props.dndPermission);
         }}
       />
     );
