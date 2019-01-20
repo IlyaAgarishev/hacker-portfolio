@@ -1,20 +1,21 @@
 .private-data {
-  background: #063b71;
+  background: black;
   display: flex;
   flex-direction: column;
   position: absolute;
   top: 50%;
   left: 60%;
-  border: 1px solid white;
+  border: 1px solid #053972;
 }
 
 .private-data-border {
-  border-top: 20px solid white;
+  border-top: 20px solid #053972;
 }
 
 .private-data-list {
   padding: 10px;
 }
+
 .icon {
   width: 30px;
   margin-right: 15px;

@@ -4,8 +4,10 @@ import Terminal from '../Terminal';
 import TerminalAuto from '../TerminalAuto';
 import HackingFbi from '../HackingFbi';
 import Projects from '../Projects';
-import hacker from '../../img/ilyahacker.png';
+import hacker from '../../img/ilyahacker.svg';
 import PrivateData from '../PrivateData';
+import AudioPlayer from 'react-h5-audio-player';
+import song from '../../audio/song.mp3';
 
 class App extends Component {
   constructor(props) {
@@ -70,7 +72,7 @@ class App extends Component {
       return (
         <div className="app" style={{ display: 'flex', flexDirection: 'column' }}>
           <img
-            src={hacker}
+            src="https://svgshare.com/i/Adf.svg"
             alt=""
             className="ilyahacker"
             ref={ref => {
@@ -100,14 +102,14 @@ class App extends Component {
           )}
           {this.state.hackInt > 150 && (
             <img
-              src={hacker}
+              src="https://svgshare.com/i/Adf.svg"
               alt=""
               className="ilyahacker"
               ref={ref => {
                 this.ilyahacker = ref;
               }}
               onMouseDown={e => {
-                this.props.simpleDragAndDrop(this.ilyahacker, e, this.props.dndPermission);
+                this.simpleDragAndDrop(this.ilyahacker, e, true);
               }}
             />
           )}
@@ -128,6 +130,15 @@ class App extends Component {
             >
               github
             </a>
+            <div
+              className="play-song"
+              onClick={() => {
+                this.song.togglePlay();
+              }}
+            >
+              song
+            </div>
+            <AudioPlayer src={song} hidePlayer={true} loop={true} ref={c => (this.song = c)} />
           </div>
         </div>
       );

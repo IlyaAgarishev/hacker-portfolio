@@ -8,10 +8,11 @@
   align-items: center;
 }
 
-.github-link {
+.github-link,
+.play-song {
   height: 70%;
   border-radius: 2px;
-  margin-left: 2px;
+  margin-left: 5px;
   display: flex;
   cursor: pointer;
   justify-content: center;
@@ -23,10 +24,6 @@
   transition: 0.2s all ease;
 }
 
-.github-link:hover {
-  background: rgb(0, 241, 0);
-}
-
 .globe {
   width: 10%;
   position: absolute;
@@ -36,11 +33,12 @@
 
 .ilyahacker {
   width: 30%;
+  background: #053972;
   position: absolute;
   left: 45%;
   margin-top: 20px;
-  border: 1px solid rgb(255, 255, 255);
-  border-top: 20px solid rgb(255, 255, 255);
+  border: 1px solid #053972;
+  border-top: 20px solid #053972;
 }
 
 /* @media only screen and (max-width: 975px) {

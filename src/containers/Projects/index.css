@@ -10,13 +10,13 @@
 
 .projects-border-top {
   height: 20px;
-  background: white;
+  background: #053972;
 }
 
 .projects {
-  background: #063b71;
-  border: 1px solid white;
-  color: #f8d412;
+  background: black;
+  border: 1px solid #053972;
+  color: #053972;
   font-size: 30px;
   font-weight: 900;
 }
@@ -24,9 +24,9 @@
 .projects-text {
   user-select: none;
   text-align: center;
-  border-bottom: 2px solid #f8d412;
+  border-bottom: 2px solid #053972;
   padding: 10px;
-  color: #f8d412;
+  color: #053972;
 }
 
 .projects-list {
@@ -41,13 +41,13 @@
   justify-content: center;
   align-items: center;
   font-size: 20px;
-  color: #f8d412;
-  border: 1px #f8d412 solid;
+  color: #053972;
+  border: 1px #053972 solid;
 }
 
 .project:hover {
-  background: #f8d412;
-  color: #063b71;
+  background: #053972;
+  color: black;
   cursor: pointer;
 }
 /* 

@@ -29,9 +29,7 @@ class Projects extends Component {
           <div
             className="projects-text"
             onMouseDown={e => {
-              if (this.props.dndPermission) {
-                this.props.simpleDragAndDrop(this.projectsWrapper, e);
-              }
+              this.props.simpleDragAndDrop(this.projectsWrapper, e, this.props.dndPermission);
             }}
           >
             ILYA'S PROJECTS
