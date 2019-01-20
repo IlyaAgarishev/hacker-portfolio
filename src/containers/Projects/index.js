@@ -5,7 +5,7 @@ class Projects extends Component {
   render() {
     let style;
     if (this.props.transform) {
-      style = { marginTop: '10px', width: '100%', position: 'relative', background: 'red' };
+      style = { marginTop: '10px', width: '100%', position: 'relative' };
       document.body.style.overflow = 'visible';
     }
 

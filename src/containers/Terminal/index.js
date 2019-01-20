@@ -7,14 +7,18 @@ class Terminal extends Component {
     let i = 0;
     let hackInt = 0;
     document.onkeydown = () => {
-      this.terminal.value += codeOne.slice(i, i + 5);
-      i += 5;
-      hackInt += 1;
-      this.props.setHackInterval(hackInt);
-      if (i > codeOne.length) {
-        i = 0;
+      try {
+        this.terminal.value += codeOne.slice(i, i + 5);
+        i += 5;
+        hackInt += 1;
+        this.props.setHackInterval(hackInt);
+        if (i > codeOne.length) {
+          i = 0;
+        }
+        this.terminal.scrollTop = this.terminal.scrollHeight;
+      } catch (error) {
+        return null;
       }
-      this.terminal.scrollTop = this.terminal.scrollHeight;
     };
   }
 
@@ -23,7 +27,7 @@ class Terminal extends Component {
       <div>
         <textarea
           className="terminal"
-          placeholder={'Start typing...'}
+          placeholder="Start typing..."
           readOnly
           ref={ref => {
             this.terminal = ref;

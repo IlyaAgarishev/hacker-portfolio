@@ -25,42 +25,41 @@ class App extends Component {
       let shiftX = e.pageX - coords.left;
       let shiftY = e.pageY - coords.top;
 
-      // item.style.position = 'absolute';
       document.body.appendChild(item);
       moveAt(e);
 
       item.style.zIndex = 1000;
 
-      function moveAt(e) {
+      let moveAt = e => {
         item.style.left = e.pageX - shiftX + 'px';
         item.style.top = e.pageY - shiftY + 'px';
-      }
+      };
 
-      document.onmousemove = function(e) {
+      document.onmousemove = e => {
         moveAt(e);
       };
 
-      item.onmouseup = function(e) {
+      item.onmouseup = e => {
         document.onmousemove = null;
         item.onmouseup = null;
       };
 
-      document.onmouseup = function() {
+      document.onmouseup = () => {
         document.onmousemove = null;
         item.onmouseup = null;
       };
 
-      item.ondragstart = function() {
+      item.ondragstart = () => {
         return false;
       };
 
-      function getCoords(elem) {
-        let box = elem.getBoundingClientRect();
+      let getCoords = element => {
+        let box = element.getBoundingClientRect();
         return {
           top: box.top + window.pageYOffset,
           left: box.left + window.pageXOffset
         };
-      }
+      };
     }
   };
 
@@ -70,9 +69,9 @@ class App extends Component {
       navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i) != null
     ) {
       return (
-        <div className="app" style={{ display: 'flex', flexDirection: 'column' }}>
+        <div className="app" style={{ display: 'flex', flexDirection: 'column', padding: '2px' }}>
           <img
-            src="https://svgshare.com/i/Adf.svg"
+            src={hacker}
             alt=""
             className="ilyahacker"
             ref={ref => {
@@ -102,7 +101,7 @@ class App extends Component {
           )}
           {this.state.hackInt > 150 && (
             <img
-              src="https://svgshare.com/i/Adf.svg"
+              src={hacker}
               alt=""
               className="ilyahacker"
               ref={ref => {

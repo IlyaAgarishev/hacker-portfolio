@@ -17,10 +17,3 @@
 .terminal::-webkit-scrollbar {
   display: none;
 }
-
-/* @media only screen and (max-width: 975px) {
-  .terminal {
-    border-top: 10px solid rgb(0, 255, 0);
-    height: 30%;
-  }
-} */
