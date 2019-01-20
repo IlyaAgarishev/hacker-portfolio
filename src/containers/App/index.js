@@ -79,8 +79,8 @@ class App extends Component {
             }}
             style={{ position: 'relative', top: 0, left: 0, width: '100%', margin: 0 }}
           />
-          <PrivateData transform={true} />
-          <Projects transform={true} />
+          <PrivateData transform={true} simpleDragAndDrop={this.simpleDragAndDrop} />
+          <Projects transform={true} simpleDragAndDrop={this.simpleDragAndDrop} />
         </div>
       );
     } else {
