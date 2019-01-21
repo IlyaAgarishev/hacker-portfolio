@@ -4,7 +4,6 @@ import Terminal from '../Terminal';
 import TerminalAuto from '../TerminalAuto';
 import HackingFbi from '../HackingFbi';
 import Projects from '../Projects';
-import hacker from '../../img/ilyahacker.svg';
 import PrivateData from '../PrivateData';
 import AudioPlayer from 'react-h5-audio-player';
 import song from '../../audio/song.mp3';
@@ -71,7 +70,7 @@ class App extends Component {
       return (
         <div className="app" style={{ display: 'flex', flexDirection: 'column', padding: '2px' }}>
           <img
-            src={hacker}
+            src="http://svgur.com/i/Adf.svg"
             alt=""
             className="ilyahacker"
             ref={ref => {
@@ -101,7 +100,7 @@ class App extends Component {
           )}
           {this.state.hackInt > 150 && (
             <img
-              src={hacker}
+              src="http://svgur.com/i/Adf.svg"
               alt=""
               className="ilyahacker"
               ref={ref => {

@@ -6,8 +6,11 @@ class Terminal extends Component {
   componentDidMount() {
     let i = 0;
     setInterval(() => {
-      console.log(this.terminalAuto.value);
-      this.terminalAuto.value += codeTwo.slice(i, i + 5);
+      try {
+        this.terminalAuto.value += codeTwo.slice(i, i + 5);
+      } catch (error) {
+        return null;
+      }
       i += 5;
       if (i > codeTwo.length) {
         i = 0;

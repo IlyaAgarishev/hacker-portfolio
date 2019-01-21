@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
 import './index.css';
-import github from '../../img/github.svg';
-import telegram from '../../img/telegram.svg';
-import whatsapp from '../../img/whatsapp.svg';
-import facebook from '../../img/facebook.svg';
-import vk from '../../img/vk.svg';
 
 class PrivateData extends Component {
   render() {
@@ -48,17 +43,32 @@ class PrivateData extends Component {
         />
         <div className="private-data-list" style={style.privateDataList}>
           <a href="https://github.com/IlyaAgarishev" target="_blank" rel="noopener noreferrer">
-            <img className="icon github" style={style.icon} src={github} alt="" />
+            <img
+              className="icon github"
+              style={style.icon}
+              src="https://svgshare.com/i/Aeu.svg"
+              alt=""
+            />
           </a>
           <a href="https://t.me/jamezdean" target="_blank" rel="noopener noreferrer">
-            <img className="icon telegram" style={style.icon} src={telegram} alt="" />
+            <img
+              className="icon telegram"
+              style={style.icon}
+              src="https://svgshare.com/i/AdA.svg"
+              alt=""
+            />
           </a>
           <a
             href="https://api.whatsapp.com/send?phone=89826161073"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img className="icon whatsapp" style={style.icon} src={whatsapp} alt="" />
+            <img
+              className="icon whatsapp"
+              style={style.icon}
+              src="https://svgshare.com/i/AeM.svg"
+              alt=""
+            />
           </a>
 
           <a
@@ -66,11 +76,21 @@ class PrivateData extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img className="icon facebook" style={style.icon} src={facebook} alt="" />
+            <img
+              className="icon facebook"
+              style={style.icon}
+              src="https://svgshare.com/i/AeB.svg"
+              alt=""
+            />
           </a>
 
           <a href="https://vk.com/jamezdean" target="_blank" rel="noopener noreferrer">
-            <img className="icon vk" style={style.icon} src={vk} alt="" />
+            <img
+              className="icon vk"
+              style={style.icon}
+              src="https://svgshare.com/i/Acc.svg"
+              alt=""
+            />
           </a>
         </div>
       </div>

@@ -9,7 +9,8 @@
 }
 
 .github-link,
-.play-song {
+.play-song,
+.skip {
   height: 70%;
   border-radius: 2px;
   margin-left: 5px;
