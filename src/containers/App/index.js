@@ -20,6 +20,19 @@ class App extends Component {
 
   simpleDragAndDrop = (item, e, dndPermission) => {
     if (dndPermission) {
+      let getCoords = element => {
+        let box = element.getBoundingClientRect();
+        return {
+          top: box.top + window.pageYOffset,
+          left: box.left + window.pageXOffset
+        };
+      };
+
+      let moveAt = e => {
+        item.style.left = e.pageX - shiftX + 'px';
+        item.style.top = e.pageY - shiftY + 'px';
+      };
+
       let coords = getCoords(item);
       let shiftX = e.pageX - coords.left;
       let shiftY = e.pageY - coords.top;
@@ -28,11 +41,6 @@ class App extends Component {
       moveAt(e);
 
       item.style.zIndex = 1000;
-
-      let moveAt = e => {
-        item.style.left = e.pageX - shiftX + 'px';
-        item.style.top = e.pageY - shiftY + 'px';
-      };
 
       document.onmousemove = e => {
         moveAt(e);
@@ -50,14 +58,6 @@ class App extends Component {
 
       item.ondragstart = () => {
         return false;
-      };
-
-      let getCoords = element => {
-        let box = element.getBoundingClientRect();
-        return {
-          top: box.top + window.pageYOffset,
-          left: box.left + window.pageXOffset
-        };
       };
     }
   };
