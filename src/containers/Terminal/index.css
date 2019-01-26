@@ -2,8 +2,8 @@
   width: 40%;
   height: 38%;
   position: absolute;
-  margin-top: 20px;
-  margin-left: 20px;
+  top: 20px;
+  left: 20px;
   background: black;
   color: rgb(0, 255, 0);
   resize: none;

@@ -1,11 +1,10 @@
 .projects-wrapper {
   width: 20%;
   position: absolute;
+  top: 20px;
+  right: 20px;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-  margin-right: 20px;
-  right: 0;
 }
 
 .projects-border-top {
@@ -24,7 +23,7 @@
 .projects-text {
   user-select: none;
   text-align: center;
-  border-bottom: 2px solid #053972;
+  border-bottom: 1px solid #053972;
   padding: 10px;
   color: #053972;
 }
@@ -42,7 +41,10 @@
   align-items: center;
   font-size: 20px;
   color: #053972;
-  border: 1px #053972 solid;
+  border-bottom: 1px #053972 solid;
+}
+.project:last-child {
+  border-bottom: none;
 }
 
 .project:hover {

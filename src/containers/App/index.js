@@ -11,8 +11,12 @@ import song from '../../audio/song.mp3';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { hackInt: 0 };
+    this.state = { hackInt: 0, hacked: false };
   }
+
+  hack = () => {
+    this.setState({ hacked: true });
+  };
 
   setHackInterval = hackInt => {
     this.setState({ hackInt: hackInt });
@@ -51,11 +55,6 @@ class App extends Component {
         item.onmouseup = null;
       };
 
-      document.onmouseup = () => {
-        document.onmousemove = null;
-        item.onmouseup = null;
-      };
-
       item.ondragstart = () => {
         return false;
       };
@@ -76,7 +75,7 @@ class App extends Component {
             ref={ref => {
               this.ilyahacker = ref;
             }}
-            style={{ position: 'relative', top: 0, left: 0, width: '100%', margin: 0 }}
+            style={{ position: 'relative', top: 0, left: 0, width: '100%' }}
           />
           <PrivateData transform={true} simpleDragAndDrop={this.simpleDragAndDrop} />
           <Projects transform={true} simpleDragAndDrop={this.simpleDragAndDrop} />
@@ -92,13 +91,17 @@ class App extends Component {
             setHackInterval={this.setHackInterval}
           />
 
-          {this.state.hackInt > 50 && (
+          {this.state.hackInt > 20 && (
             <TerminalAuto simpleDragAndDrop={this.simpleDragAndDrop} dndPermission={true} />
           )}
-          {this.state.hackInt > 100 && (
-            <HackingFbi simpleDragAndDrop={this.simpleDragAndDrop} dndPermission={true} />
+          {this.state.hackInt > 30 && (
+            <HackingFbi
+              simpleDragAndDrop={this.simpleDragAndDrop}
+              dndPermission={true}
+              hack={this.hack}
+            />
           )}
-          {this.state.hackInt > 150 && (
+          {this.state.hacked === true && (
             <img
               src="http://svgur.com/i/Adf.svg"
               alt=""
@@ -112,11 +115,11 @@ class App extends Component {
             />
           )}
 
-          {this.state.hackInt > 160 && (
+          {this.state.hacked === true && (
             <Projects simpleDragAndDrop={this.simpleDragAndDrop} dndPermission={true} />
           )}
 
-          {this.state.hackInt > 170 && (
+          {this.state.hacked === true && (
             <PrivateData simpleDragAndDrop={this.simpleDragAndDrop} dndPermission={true} />
           )}
 
@@ -125,6 +128,7 @@ class App extends Component {
               href="https://github.com/IlyaAgarishev/hacker-portfolio"
               target="_blank"
               className="github-link"
+              rel="noopener noreferrer"
             >
               github
             </a>

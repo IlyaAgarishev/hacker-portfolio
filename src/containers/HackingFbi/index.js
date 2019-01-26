@@ -12,6 +12,7 @@ class HackingFbi extends Component {
       this.hackingFbi.style.textAlign = 'center';
       this.hackingFbi.style.color = 'rgb(0, 255, 0)';
       this.hackingFbi.style.fontSize = '50px';
+      this.props.hack();
     }, 2100);
   }
 

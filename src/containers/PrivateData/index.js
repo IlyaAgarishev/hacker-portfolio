@@ -22,9 +22,9 @@ class PrivateData extends Component {
       };
     } else {
       style = {
-        privateData: {},
-        privateDataList: {},
-        icon: {}
+        privateData: null,
+        privateDataList: null,
+        icon: null
       };
     }
     return (
