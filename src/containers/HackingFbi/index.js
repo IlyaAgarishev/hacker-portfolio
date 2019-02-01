@@ -2,16 +2,22 @@ import React, { Component } from 'react';
 import './index.css';
 
 class HackingFbi extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hackingProcess: '', hacked: false };
+  }
+
   componentDidMount() {
     let hackingLoading = setInterval(() => {
-      this.hackingProcess.innerHTML += '☠/';
+      this.setState({
+        hackingProcess: this.state.hackingProcess + '☠/'
+      });
     }, 200);
+
     setTimeout(() => {
       clearInterval(hackingLoading);
-      this.hackingFbi.innerHTML = 'ACCESS GRANTED';
-      this.hackingFbi.style.textAlign = 'center';
-      this.hackingFbi.style.color = 'rgb(0, 255, 0)';
-      this.hackingFbi.style.fontSize = '50px';
+      this.setState({ hackingProcess: 'ACCESS GRANTED' });
+      this.setState({ hacked: true });
       this.props.hack();
     }, 2100);
   }
@@ -22,20 +28,11 @@ class HackingFbi extends Component {
         onMouseDown={e => {
           this.props.simpleDragAndDrop(this.hackingFbi, e, this.props.dndPermission);
         }}
-        className="hacking-fbi"
-        ref={ref => {
-          this.hackingFbi = ref;
-        }}
+        className={this.state.hacked ? 'hacking-fbi access-granted' : 'hacking-fbi'}
+        ref={ref => (this.hackingFbi = ref)}
       >
-        <div className="hacking-fbi-text">HACKING FBI DATABASE</div>
-        <div
-          className="hacking-process"
-          ref={ref => {
-            this.hackingProcess = ref;
-          }}
-        >
-          ‍
-        </div>
+        <div className="hacking-fbi-text">{this.state.hacked ? '' : 'HACKING FBI DATABASE'}</div>
+        <div className="hacking-process">‍{this.state.hackingProcess}</div>
       </div>
     );
   }

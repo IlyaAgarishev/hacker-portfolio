@@ -8,12 +8,24 @@
   border: 1px solid #053972;
 }
 
+.private-data-transform {
+  margin-top: 10px;
+  width: 100%;
+  left: 0;
+  position: relative;
+}
+
 .private-data-border {
   border-top: 20px solid #053972;
 }
 
 .private-data-list {
   padding: 10px;
+}
+
+.private-data-list-transform {
+  display: flex;
+  justify-content: space-around;
 }
 
 .icon {

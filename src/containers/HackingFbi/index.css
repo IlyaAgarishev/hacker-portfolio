@@ -12,6 +12,12 @@
   user-select: none;
 }
 
+.access-granted {
+  text-align: center;
+  color: rgb(0, 255, 0);
+  font-size: 50px;
+}
+
 .hacking-fbi-text {
   text-align: center;
   user-select: none;

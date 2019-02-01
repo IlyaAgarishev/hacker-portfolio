@@ -67,15 +67,11 @@ class App extends Component {
       navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i) != null
     ) {
       return (
-        <div className="app" style={{ display: 'flex', flexDirection: 'column', padding: '2px' }}>
+        <div className="app-transform">
           <img
             src="http://svgur.com/i/Adf.svg"
             alt=""
-            className="ilyahacker"
-            ref={ref => {
-              this.ilyahacker = ref;
-            }}
-            style={{ position: 'relative', top: 0, left: 0, width: '100%' }}
+            className="ilyahacker ilyahacker-transform"
           />
           <PrivateData transform={true} simpleDragAndDrop={this.simpleDragAndDrop} />
           <Projects transform={true} simpleDragAndDrop={this.simpleDragAndDrop} />
@@ -83,7 +79,7 @@ class App extends Component {
       );
     } else {
       return (
-        <div className="app" ref={ref => (this.app = ref)}>
+        <div>
           <img src="https://i.gifer.com/C6Zz.gif" alt="" className="globe" />
           <Terminal
             simpleDragAndDrop={this.simpleDragAndDrop}

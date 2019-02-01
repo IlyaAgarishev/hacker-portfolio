@@ -1,3 +1,9 @@
+.app-transform {
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+}
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -40,4 +46,11 @@
   top: 20px;
   border: 1px solid #053972;
   border-top: 20px solid #053972;
+}
+
+.ilyahacker-transform {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
 }

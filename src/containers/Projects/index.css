@@ -7,6 +7,14 @@
   flex-direction: column;
 }
 
+.projects-wrapper-transform {
+  margin-top: 10px;
+  width: 100%;
+  position: relative;
+  right: 0px;
+  top: 0px;
+}
+
 .projects-border-top {
   height: 20px;
   background: #053972;

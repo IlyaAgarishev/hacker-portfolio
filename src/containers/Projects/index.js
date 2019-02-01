@@ -3,9 +3,7 @@ import './index.css';
 
 class Projects extends Component {
   render() {
-    let style;
     if (this.props.transform) {
-      style = { marginTop: '10px', width: '100%', position: 'relative', right: '0px', top: '0px' };
       document.body.style.overflow = 'visible';
     }
 
@@ -13,8 +11,7 @@ class Projects extends Component {
 
     return (
       <div
-        className="projects-wrapper"
-        style={style}
+        className={this.props.transform ? 'projects-wrapper-transform' : 'projects-wrapper'}
         ref={ref => {
           this.projectsWrapper = ref;
         }}

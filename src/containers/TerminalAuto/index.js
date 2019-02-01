@@ -3,11 +3,16 @@ import './index.css';
 import codeTwo from '../../codesnippets/code_two.js';
 
 class Terminal extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { textareaValue: '' };
+  }
+
   componentDidMount() {
     let i = 0;
     setInterval(() => {
       try {
-        this.terminalAuto.value += codeTwo.slice(i, i + 5);
+        this.setState({ textareaValue: this.state.textareaValue + codeTwo.slice(i, i + 5) });
       } catch (error) {
         return null;
       }
@@ -32,6 +37,7 @@ class Terminal extends Component {
           e.preventDefault();
           this.props.simpleDragAndDrop(this.terminalAuto, e, this.props.dndPermission);
         }}
+        value={this.state.textareaValue}
       />
     );
   }

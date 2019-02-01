@@ -3,12 +3,17 @@ import './index.css';
 import codeOne from '../../codesnippets/code_one.js';
 
 class Terminal extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { textareaValue: '' };
+  }
+
   componentDidMount() {
     let i = 0;
     let hackInt = 0;
     document.onkeydown = () => {
       try {
-        this.terminal.value += codeOne.slice(i, i + 5);
+        this.setState({ textareaValue: this.state.textareaValue + codeOne.slice(i, i + 5) });
         i += 5;
         hackInt += 1;
         this.props.setHackInterval(hackInt);
@@ -37,6 +42,7 @@ class Terminal extends Component {
             this.props.simpleDragAndDrop(this.terminal, e, this.props.dndPermission);
             this.terminal.scrollTop = this.terminal.scrollHeight;
           }}
+          value={this.state.textareaValue}
         />
       </div>
     );
