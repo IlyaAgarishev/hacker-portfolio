@@ -39,11 +39,9 @@
 }
 
 .ilyahacker {
-  width: 30%;
   background: #053972;
   position: absolute;
-  left: 45%;
-  top: 20px;
+  width: 100%;
   border: 1px solid #053972;
   border-top: 20px solid #053972;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
+import Dnd from '../Dnd';
 import Terminal from '../Terminal';
 import TerminalAuto from '../TerminalAuto';
 import HackingFbi from '../HackingFbi';
@@ -73,42 +74,33 @@ class App extends Component {
             alt=""
             className="ilyahacker ilyahacker-transform"
           />
-          <PrivateData transform={true} simpleDragAndDrop={this.simpleDragAndDrop} />
-          <Projects transform={true} simpleDragAndDrop={this.simpleDragAndDrop} />
+          <PrivateData transform={true} />
+          <Projects transform={true} />
         </div>
       );
     } else {
       return (
         <div>
           <img src="https://i.gifer.com/C6Zz.gif" alt="" className="globe" />
-          <Terminal
-            simpleDragAndDrop={this.simpleDragAndDrop}
-            dndPermission={true}
-            setHackInterval={this.setHackInterval}
-          />
+
+          <Dnd style={{ width: '40%', height: '38%', top: '20px', left: '20px' }}>
+            <Terminal setHackInterval={this.setHackInterval} />
+          </Dnd>
 
           {this.state.hackInt > 20 && (
-            <TerminalAuto simpleDragAndDrop={this.simpleDragAndDrop} dndPermission={true} />
+            <Dnd style={{ width: '30%', height: '35%', top: '49%', left: '20px' }}>
+              <TerminalAuto />
+            </Dnd>
           )}
           {this.state.hackInt > 30 && (
-            <HackingFbi
-              simpleDragAndDrop={this.simpleDragAndDrop}
-              dndPermission={true}
-              hack={this.hack}
-            />
+            <Dnd style={{ width: '31%', top: '73%', left: '35%' }}>
+              <HackingFbi hack={this.hack} />
+            </Dnd>
           )}
           {this.state.hacked === true && (
-            <img
-              src="http://svgur.com/i/Adf.svg"
-              alt=""
-              className="ilyahacker"
-              ref={ref => {
-                this.ilyahacker = ref;
-              }}
-              onMouseDown={e => {
-                this.simpleDragAndDrop(this.ilyahacker, e, true);
-              }}
-            />
+            <Dnd style={{ width: '30%', top: '20px', left: '45%' }}>
+              <img src="http://svgur.com/i/Adf.svg" alt="" className="ilyahacker" />
+            </Dnd>
           )}
 
           {this.state.hacked === true && (
