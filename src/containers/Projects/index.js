@@ -57,12 +57,12 @@ class Projects extends Component {
               hacker-portfolio
             </a>
             <a
-              href="https://github.com/IlyaAgarishev/twithor"
+              href="https://github.com/IlyaAgarishev/naumen-test-task"
               target="_blank"
               rel="noopener noreferrer"
               className="project"
             >
-              twithor
+              wiki-search
             </a>
           </div>
         </div>
