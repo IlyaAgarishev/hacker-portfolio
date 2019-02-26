@@ -33,6 +33,10 @@ class Terminal extends Component {
           this.terminalAuto = ref;
         }}
         readOnly
+        onMouseDown={e => {
+          e.preventDefault();
+          this.props.simpleDragAndDrop(this.terminalAuto, e, this.props.dndPermission);
+        }}
         value={this.state.textareaValue}
       />
     );

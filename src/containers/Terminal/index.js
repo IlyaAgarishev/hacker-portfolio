@@ -5,7 +5,7 @@ import codeOne from '../../codesnippets/code_one.js';
 class Terminal extends Component {
   constructor(props) {
     super(props);
-    this.state = { textareaValue: '', scrollHeight: 0 };
+    this.state = { textareaValue: '' };
   }
 
   componentDidMount() {
@@ -20,8 +20,7 @@ class Terminal extends Component {
         if (i > codeOne.length) {
           i = 0;
         }
-        this.setState({ scrollHeight: this.terminal.scrollHeight });
-        this.terminal.scrollTop = this.state.scrollHeight;
+        this.terminal.scrollTop = this.terminal.scrollHeight;
       } catch (error) {
         return null;
       }
@@ -30,22 +29,22 @@ class Terminal extends Component {
 
   render() {
     return (
-      <textarea
-        className="terminal"
-        placeholder="Start typing..."
-        readOnly
-        onMouseDown={() => {
-          this.terminal.scrollTop = '1000';
-          console.log({
-            scrollTop: this.terminal.scrollTop,
-            scrollHeight: this.terminal.scrollHeight
-          });
-        }}
-        ref={ref => {
-          this.terminal = ref;
-        }}
-        value={this.state.textareaValue}
-      />
+      <div>
+        <textarea
+          className="terminal"
+          placeholder="Start typing..."
+          readOnly
+          ref={ref => {
+            this.terminal = ref;
+          }}
+          onMouseDown={e => {
+            e.preventDefault();
+            this.props.simpleDragAndDrop(this.terminal, e, this.props.dndPermission);
+            this.terminal.scrollTop = this.terminal.scrollHeight;
+          }}
+          value={this.state.textareaValue}
+        />
+      </div>
     );
   }
 }
