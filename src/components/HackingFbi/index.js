@@ -27,11 +27,7 @@ class HackingFbi extends Component {
     return (
       <div
         onMouseDown={e => {
-          this.props.simpleDragAndDrop(
-            this.hackingFbi,
-            e,
-            this.props.dndPermission
-          );
+          this.props.simpleDragAndDrop(this.hackingFbi, e);
         }}
         className={
           this.state.hacked
@@ -53,7 +49,6 @@ class HackingFbi extends Component {
 
 HackingFbi.propTypes = {
   simpleDragAndDrop: PropTypes.func.isRequired,
-  dndPermission: PropTypes.bool.isRequired,
   hack: PropTypes.func.isRequired
 };
 

@@ -12,13 +12,9 @@ class TerminalAuto extends Component {
   componentDidMount() {
     let i = 0;
     setInterval(() => {
-      try {
-        this.setState({
-          textareaValue: this.state.textareaValue + codeTwo.slice(i, i + 5)
-        });
-      } catch (error) {
-        return null;
-      }
+      this.setState({
+        textareaValue: this.state.textareaValue + codeTwo.slice(i, i + 5)
+      });
       i += 5;
       if (i > codeTwo.length) {
         i = 0;
@@ -38,11 +34,7 @@ class TerminalAuto extends Component {
         readOnly
         onMouseDown={e => {
           e.preventDefault();
-          this.props.simpleDragAndDrop(
-            this.terminalAuto,
-            e,
-            this.props.dndPermission
-          );
+          this.props.simpleDragAndDrop(this.terminalAuto, e);
         }}
         value={this.state.textareaValue}
       />
@@ -51,8 +43,7 @@ class TerminalAuto extends Component {
 }
 
 TerminalAuto.propTypes = {
-  simpleDragAndDrop: PropTypes.func.isRequired,
-  dndPermission: PropTypes.bool.isRequired
+  simpleDragAndDrop: PropTypes.func.isRequired
 };
 
 export default TerminalAuto;

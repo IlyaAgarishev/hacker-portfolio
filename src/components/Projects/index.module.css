@@ -39,6 +39,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-size: 20px;
   color: #053972;
   border-bottom: 1px #053972 solid;

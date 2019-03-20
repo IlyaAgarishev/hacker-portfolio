@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styles from "./index.module.css";
 import PropTypes from "prop-types";
 
@@ -87,7 +87,7 @@ const PrivateData = props => {
 
 PrivateData.propTypes = {
   simpleDragAndDrop: PropTypes.func.isRequired,
-  dndPermission: PropTypes.bool.isRequired,
+  dndPermission: PropTypes.string.isRequired,
   hacked: PropTypes.bool.isRequired
 };
 
