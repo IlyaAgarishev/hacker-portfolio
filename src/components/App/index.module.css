@@ -1,4 +1,4 @@
-.app-transform {
+.appTransform {
   display: flex;
   flex-direction: column;
   padding: 2px;
@@ -14,8 +14,8 @@
   align-items: center;
 }
 
-.github-link,
-.play-song,
+.githubLink,
+.playSong,
 .skip {
   height: 70%;
   border-radius: 2px;
@@ -48,7 +48,7 @@
   border-top: 20px solid #053972;
 }
 
-.ilyahacker-transform {
+.ilyahackerTransform {
   position: relative;
   top: 0;
   left: 0;

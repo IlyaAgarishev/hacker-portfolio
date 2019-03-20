@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
-import './index.css';
-import Terminal from '../Terminal';
-import TerminalAuto from '../TerminalAuto';
-import HackingFbi from '../HackingFbi';
-import Projects from '../Projects';
-import PrivateData from '../PrivateData';
-import AudioPlayer from 'react-h5-audio-player';
-import song from '../../audio/song.mp3';
+import React, { Component } from "react";
+import Terminal from "../Terminal";
+import TerminalAuto from "../TerminalAuto";
+import HackingFbi from "../HackingFbi";
+import Projects from "../Projects";
+import PrivateData from "../PrivateData";
+import AudioPlayer from "react-h5-audio-player";
+import song from "../../audio/song.mp3";
+import ilyaSvg from "../../img/ilyahacker.svg";
+import styles from "./index.module.css";
 
 class App extends Component {
   constructor(props) {
@@ -33,8 +34,8 @@ class App extends Component {
       };
 
       let moveAt = e => {
-        item.style.left = e.pageX - shiftX + 'px';
-        item.style.top = e.pageY - shiftY + 'px';
+        item.style.left = e.pageX - shiftX + "px";
+        item.style.top = e.pageY - shiftY + "px";
       };
 
       let coords = getCoords(item);
@@ -64,23 +65,37 @@ class App extends Component {
   render() {
     if (
       window.innerWidth < 975 ||
-      navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i) != null
+      navigator.userAgent.match(
+        /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i
+      ) != null
     ) {
       return (
-        <div className="app-transform">
+        <div className={styles.appTransform}>
           <img
-            src="http://svgur.com/i/Adf.svg"
+            src={ilyaSvg}
             alt=""
-            className="ilyahacker ilyahacker-transform"
+            className={[styles.ilyahacker, styles.ilyahackerTransform].join(
+              " "
+            )}
           />
-          <PrivateData transform={true} simpleDragAndDrop={this.simpleDragAndDrop} />
-          <Projects transform={true} simpleDragAndDrop={this.simpleDragAndDrop} />
+          <PrivateData
+            transform={true}
+            simpleDragAndDrop={this.simpleDragAndDrop}
+          />
+          <Projects
+            transform={true}
+            simpleDragAndDrop={this.simpleDragAndDrop}
+          />
         </div>
       );
     } else {
       return (
         <div>
-          <img src="https://i.gifer.com/C6Zz.gif" alt="" className="globe" />
+          <img
+            src="https://i.gifer.com/C6Zz.gif"
+            alt=""
+            className={styles.globe}
+          />
           <Terminal
             simpleDragAndDrop={this.simpleDragAndDrop}
             dndPermission={true}
@@ -88,7 +103,10 @@ class App extends Component {
           />
 
           {this.state.hackInt > 20 && (
-            <TerminalAuto simpleDragAndDrop={this.simpleDragAndDrop} dndPermission={true} />
+            <TerminalAuto
+              simpleDragAndDrop={this.simpleDragAndDrop}
+              dndPermission={true}
+            />
           )}
           {this.state.hackInt > 30 && (
             <HackingFbi
@@ -99,9 +117,9 @@ class App extends Component {
           )}
           {this.state.hacked === true && (
             <img
-              src="http://svgur.com/i/Adf.svg"
+              src={ilyaSvg}
               alt=""
-              className="ilyahacker"
+              className={styles.ilyahacker}
               ref={ref => {
                 this.ilyahacker = ref;
               }}
@@ -112,31 +130,42 @@ class App extends Component {
           )}
 
           {this.state.hacked === true && (
-            <Projects simpleDragAndDrop={this.simpleDragAndDrop} dndPermission={true} />
+            <Projects
+              simpleDragAndDrop={this.simpleDragAndDrop}
+              dndPermission={true}
+            />
           )}
 
           {this.state.hacked === true && (
-            <PrivateData simpleDragAndDrop={this.simpleDragAndDrop} dndPermission={true} />
+            <PrivateData
+              simpleDragAndDrop={this.simpleDragAndDrop}
+              dndPermission={true}
+            />
           )}
 
-          <div className="footer">
+          <div className={styles.footer}>
             <a
               href="https://github.com/IlyaAgarishev/hacker-portfolio"
               target="_blank"
-              className="github-link"
+              className={styles.githubLink}
               rel="noopener noreferrer"
             >
               github
             </a>
             <div
-              className="play-song"
+              className={styles.playSong}
               onClick={() => {
                 this.song.togglePlay();
               }}
             >
               song
             </div>
-            <AudioPlayer src={song} hidePlayer={true} loop={true} ref={c => (this.song = c)} />
+            <AudioPlayer
+              src={song}
+              hidePlayer={true}
+              loop={true}
+              ref={c => (this.song = c)}
+            />
           </div>
         </div>
       );

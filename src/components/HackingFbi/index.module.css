@@ -1,4 +1,4 @@
-.hacking-fbi {
+.hackingFbi {
   color: rgb(241, 0, 0);
   position: absolute;
   top: 73%;
@@ -12,19 +12,19 @@
   user-select: none;
 }
 
-.access-granted {
+.accessGranted {
   text-align: center;
   color: rgb(0, 255, 0);
   font-size: 50px;
 }
 
-.hacking-fbi-text {
+.hackingFbiText {
   text-align: center;
   user-select: none;
 }
 
 @media only screen and (max-width: 1245px) {
-  .hacking-fbi {
+  .hackingFbi {
     left: 40%;
     font-size: 25px !important;
   }

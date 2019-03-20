@@ -1,4 +1,4 @@
-.private-data {
+.privateData {
   background: black;
   display: flex;
   flex-direction: column;
@@ -8,22 +8,22 @@
   border: 1px solid #053972;
 }
 
-.private-data-transform {
+.privateDataTransform {
   margin-top: 10px;
   width: 100%;
   left: 0;
   position: relative;
 }
 
-.private-data-border {
+.privateDataBorder {
   border-top: 20px solid #053972;
 }
 
-.private-data-list {
+.privateDataList {
   padding: 10px;
 }
 
-.private-data-list-transform {
+.privateDataListTransform {
   display: flex;
   justify-content: space-around;
 }

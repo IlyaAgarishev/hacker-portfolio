@@ -1,42 +1,52 @@
-import React, { Component } from 'react';
-import './index.css';
+import React, { Component } from "react";
+import styles from "./index.module.css";
 
 class Projects extends Component {
   render() {
     if (this.props.transform) {
-      document.body.style.overflow = 'visible';
+      document.body.style.overflow = "visible";
     }
-
-    // https://api.github.com/repos/IlyaAgarishev/qiqi
 
     return (
       <div
-        className={this.props.transform ? 'projects-wrapper-transform' : 'projects-wrapper'}
+        className={
+          this.props.transform
+            ? styles.projectsWrapperTransform
+            : styles.projectsWrapper
+        }
         ref={ref => {
           this.projectsWrapper = ref;
         }}
       >
         <div
-          className="projects-border-top"
+          className={styles.projectsBorderTop}
           onMouseDown={e => {
-            this.props.simpleDragAndDrop(this.projectsWrapper, e, this.props.dndPermission);
+            this.props.simpleDragAndDrop(
+              this.projectsWrapper,
+              e,
+              this.props.dndPermission
+            );
           }}
         />
-        <div className="projects">
+        <div className={styles.projects}>
           <div
-            className="projects-text"
+            className={styles.projectsText}
             onMouseDown={e => {
-              this.props.simpleDragAndDrop(this.projectsWrapper, e, this.props.dndPermission);
+              this.props.simpleDragAndDrop(
+                this.projectsWrapper,
+                e,
+                this.props.dndPermission
+              );
             }}
           >
             ILYA'S PROJECTS
           </div>
-          <div className="projects-list">
+          <div className={styles.projectsList}>
             <a
               href="https://github.com/IlyaAgarishev/qiqi"
               target="_blank"
               rel="noopener noreferrer"
-              className="project"
+              className={styles.project}
             >
               qiqi
             </a>
@@ -44,7 +54,7 @@ class Projects extends Component {
               href="https://github.com/IlyaAgarishev/react-random-quiz"
               target="_blank"
               rel="noopener noreferrer"
-              className="project"
+              className={styles.project}
             >
               react-random-quiz
             </a>
@@ -52,7 +62,7 @@ class Projects extends Component {
               href="https://github.com/IlyaAgarishev/hacker-portfolio"
               target="_blank"
               rel="noopener noreferrer"
-              className="project"
+              className={styles.project}
             >
               hacker-portfolio
             </a>
@@ -60,7 +70,7 @@ class Projects extends Component {
               href="https://github.com/IlyaAgarishev/naumen-test-task"
               target="_blank"
               rel="noopener noreferrer"
-              className="project"
+              className={styles.project}
             >
               wiki-search
             </a>

@@ -1,18 +1,20 @@
-import React, { Component } from 'react';
-import './index.css';
-import codeTwo from '../../codesnippets/code_two.js';
+import React, { Component } from "react";
+import styles from "./index.module.css";
+import codeTwo from "../../codesnippets/code_two.js";
 
 class Terminal extends Component {
   constructor(props) {
     super(props);
-    this.state = { textareaValue: '' };
+    this.state = { textareaValue: "" };
   }
 
   componentDidMount() {
     let i = 0;
     setInterval(() => {
       try {
-        this.setState({ textareaValue: this.state.textareaValue + codeTwo.slice(i, i + 5) });
+        this.setState({
+          textareaValue: this.state.textareaValue + codeTwo.slice(i, i + 5)
+        });
       } catch (error) {
         return null;
       }
@@ -27,15 +29,19 @@ class Terminal extends Component {
   render() {
     return (
       <textarea
-        className="terminal-auto"
-        placeholder={'Start typing...'}
+        className={styles.terminalAuto}
+        placeholder={"Start typing..."}
         ref={ref => {
           this.terminalAuto = ref;
         }}
         readOnly
         onMouseDown={e => {
           e.preventDefault();
-          this.props.simpleDragAndDrop(this.terminalAuto, e, this.props.dndPermission);
+          this.props.simpleDragAndDrop(
+            this.terminalAuto,
+            e,
+            this.props.dndPermission
+          );
         }}
         value={this.state.textareaValue}
       />

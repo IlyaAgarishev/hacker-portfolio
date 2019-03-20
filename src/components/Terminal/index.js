@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import './index.css';
-import codeOne from '../../codesnippets/code_one.js';
+import React, { Component } from "react";
+import styles from "./index.module.css";
+import codeOne from "../../codesnippets/code_one.js";
 
 class Terminal extends Component {
   constructor(props) {
     super(props);
-    this.state = { textareaValue: '' };
+    this.state = { textareaValue: "" };
   }
 
   componentDidMount() {
@@ -13,7 +13,9 @@ class Terminal extends Component {
     let hackInt = 0;
     document.onkeydown = () => {
       try {
-        this.setState({ textareaValue: this.state.textareaValue + codeOne.slice(i, i + 5) });
+        this.setState({
+          textareaValue: this.state.textareaValue + codeOne.slice(i, i + 5)
+        });
         i += 5;
         hackInt += 1;
         this.props.setHackInterval(hackInt);
@@ -31,7 +33,7 @@ class Terminal extends Component {
     return (
       <div>
         <textarea
-          className="terminal"
+          className={styles.terminal}
           placeholder="Start typing..."
           readOnly
           ref={ref => {
@@ -39,7 +41,11 @@ class Terminal extends Component {
           }}
           onMouseDown={e => {
             e.preventDefault();
-            this.props.simpleDragAndDrop(this.terminal, e, this.props.dndPermission);
+            this.props.simpleDragAndDrop(
+              this.terminal,
+              e,
+              this.props.dndPermission
+            );
             this.terminal.scrollTop = this.terminal.scrollHeight;
           }}
           value={this.state.textareaValue}

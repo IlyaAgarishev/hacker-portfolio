@@ -1,4 +1,4 @@
-.projects-wrapper {
+.projectsWrapper {
   width: 20%;
   position: absolute;
   top: 20px;
@@ -7,7 +7,7 @@
   flex-direction: column;
 }
 
-.projects-wrapper-transform {
+.projectsWrapperTransform {
   margin-top: 10px;
   width: 100%;
   position: relative;
@@ -15,7 +15,7 @@
   top: 0px;
 }
 
-.projects-border-top {
+.projectsBorderTop {
   height: 20px;
   background: #053972;
 }
@@ -28,7 +28,7 @@
   font-weight: 900;
 }
 
-.projects-text {
+.projectsText {
   user-select: none;
   text-align: center;
   border-bottom: 1px solid #053972;
@@ -36,7 +36,7 @@
   color: #053972;
 }
 
-.projects-list {
+.projectsList {
   display: flex;
   flex-wrap: wrap;
 }
