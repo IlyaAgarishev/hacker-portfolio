@@ -55,19 +55,17 @@
   cursor: pointer;
 }
 
-
 @media only screen and (max-width: 975px) {
   body {
     overflow: visible;
   }
 
- .projectsWrapper {
-  margin-top: 10px;
-  width: 100%;
-  position: relative;
-  right: 0px;
-  top: 0px;
-  order: 3;
- }
-
+  .projectsWrapper {
+    margin-top: 10px;
+    width: 100%;
+    position: relative;
+    right: 0px;
+    top: 0px;
+    order: 3;
+  }
 }

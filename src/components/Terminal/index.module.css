@@ -1,4 +1,4 @@
-.terminal { 
+.terminal {
   width: 40%;
   height: 38%;
   position: absolute;
@@ -19,7 +19,7 @@
 }
 
 @media only screen and (max-width: 975px) {
-  .terminal{
+  .terminal {
     display: none;
   }
 }

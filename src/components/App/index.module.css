@@ -42,19 +42,18 @@
   border-top: 20px solid #053972;
 }
 
-
-
 @media only screen and (max-width: 975px) {
   .app {
     display: flex;
     flex-direction: column;
     padding: 2px;
   }
-  .globe, .footer {
+  .globe,
+  .footer {
     display: none;
   }
 
-  .ilyahacker{
+  .ilyahacker {
     position: relative;
     top: 0;
     left: 0;
