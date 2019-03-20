@@ -1,12 +1,13 @@
+export const getCoords = element => {
+  let box = element.getBoundingClientRect();
+  return {
+    top: box.top + window.pageYOffset,
+    left: box.left + window.pageXOffset
+  };
+};
+
 export const simpleDragAndDrop = (item, e, dndPermission) => {
   if (dndPermission === "denied") return null;
-  let getCoords = element => {
-    let box = element.getBoundingClientRect();
-    return {
-      top: box.top + window.pageYOffset,
-      left: box.left + window.pageXOffset
-    };
-  };
 
   let moveAt = e => {
     item.style.left = e.pageX - shiftX + "px";
