@@ -4,10 +4,9 @@ import TerminalAuto from "../TerminalAuto";
 import HackingFbi from "../HackingFbi";
 import Projects from "../Projects";
 import PrivateData from "../PrivateData";
-import AudioPlayer from "react-h5-audio-player";
-import song from "../../audio/song.mp3";
 import ilyaSvg from "../../img/ilyahacker.svg";
 import styles from "./index.module.css";
+import Footer from "../Footer";
 import { simpleDragAndDrop } from "../../dnd.js";
 
 class App extends Component {
@@ -36,9 +35,10 @@ class App extends Component {
       <div className={styles.app}>
         <img
           src="https://i.gifer.com/C6Zz.gif"
-          alt=""
+          alt="globe"
           className={styles.globe}
         />
+
         <Terminal
           simpleDragAndDrop={simpleDragAndDrop}
           setHackInterval={this.setHackInterval}
@@ -47,9 +47,11 @@ class App extends Component {
         {this.state.hackInt > 20 && (
           <TerminalAuto simpleDragAndDrop={simpleDragAndDrop} />
         )}
+
         {this.state.hackInt > 30 && (
           <HackingFbi simpleDragAndDrop={simpleDragAndDrop} hack={this.hack} />
         )}
+
         {this.state.hacked === true && (
           <img
             src={ilyaSvg}
@@ -76,30 +78,7 @@ class App extends Component {
           hacked={this.state.hacked}
         />
 
-        <div className={styles.footer}>
-          <a
-            href="https://github.com/IlyaAgarishev/hacker-portfolio"
-            target="_blank"
-            className={styles.githubLink}
-            rel="noopener noreferrer"
-          >
-            github
-          </a>
-          <div
-            className={styles.playSong}
-            onClick={() => {
-              this.song.togglePlay();
-            }}
-          >
-            song
-          </div>
-          <AudioPlayer
-            src={song}
-            hidePlayer={true}
-            loop={true}
-            ref={c => (this.song = c)}
-          />
-        </div>
+        <Footer />
       </div>
     );
   }

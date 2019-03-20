@@ -28,7 +28,7 @@ const PrivateData = props => {
             <img
               className={styles.icon}
               src="https://svgshare.com/i/Aeu.svg"
-              alt=""
+              alt="github"
             />
           </a>
           <a
@@ -39,7 +39,7 @@ const PrivateData = props => {
             <img
               className={styles.icon}
               src="https://svgshare.com/i/AdA.svg"
-              alt=""
+              alt="telegram"
             />
           </a>
           <a
@@ -50,7 +50,7 @@ const PrivateData = props => {
             <img
               className={styles.icon}
               src="https://svgshare.com/i/AeM.svg"
-              alt=""
+              alt="whatsapp"
             />
           </a>
 
@@ -62,7 +62,7 @@ const PrivateData = props => {
             <img
               className={styles.icon}
               src="https://svgshare.com/i/AeB.svg"
-              alt=""
+              alt="facebook"
             />
           </a>
 
@@ -74,7 +74,7 @@ const PrivateData = props => {
             <img
               className={styles.icon}
               src="https://svgshare.com/i/Acc.svg"
-              alt=""
+              alt="vk"
             />
           </a>
         </div>

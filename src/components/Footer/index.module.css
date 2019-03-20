@@ -1,0 +1,32 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background: rgb(0, 255, 0);
+  display: flex;
+  align-items: center;
+}
+
+.githubLink,
+.playSong,
+.skip {
+  height: 70%;
+  border-radius: 2px;
+  margin-left: 5px;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  text-decoration: none;
+  border: 1px solid black;
+  color: black;
+  transition: 0.2s all ease;
+}
+
+@media only screen and (max-width: 975px) {
+  .footer {
+    display: none;
+  }
+}
