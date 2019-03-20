@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styles from "./index.module.css";
+import PropTypes from "prop-types";
 
 class HackingFbi extends Component {
   constructor(props) {
@@ -49,5 +50,11 @@ class HackingFbi extends Component {
     );
   }
 }
+
+HackingFbi.propTypes = {
+  simpleDragAndDrop: PropTypes.func.isRequired,
+  dndPermission: PropTypes.bool.isRequired,
+  hack: PropTypes.func.isRequired
+};
 
 export default HackingFbi;

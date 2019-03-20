@@ -7,14 +7,6 @@
   flex-direction: column;
 }
 
-.projectsWrapperTransform {
-  margin-top: 10px;
-  width: 100%;
-  position: relative;
-  right: 0px;
-  top: 0px;
-}
-
 .projectsBorderTop {
   height: 20px;
   background: #053972;
@@ -51,6 +43,7 @@
   color: #053972;
   border-bottom: 1px #053972 solid;
 }
+
 .project:last-child {
   border-bottom: none;
 }
@@ -59,4 +52,21 @@
   background: #053972;
   color: black;
   cursor: pointer;
+}
+
+
+@media only screen and (max-width: 975px) {
+  body {
+    overflow: visible;
+  }
+
+ .projectsWrapper {
+  margin-top: 10px;
+  width: 100%;
+  position: relative;
+  right: 0px;
+  top: 0px;
+  order: 3;
+ }
+
 }

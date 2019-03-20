@@ -17,3 +17,9 @@
 .terminal::-webkit-scrollbar {
   display: none;
 }
+
+@media only screen and (max-width: 975px) {
+  .terminal{
+    display: none;
+  }
+}

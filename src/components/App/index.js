@@ -12,7 +12,14 @@ import styles from "./index.module.css";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { hackInt: 0, hacked: false };
+    this.state = { hackInt: 0, hacked: false, dndPermission: true };
+  }
+
+  componentWillMount() {
+    if (window.innerWidth < 975) {
+      this.hack(true);
+      this.setState({ dndPermission: false });
+    }
   }
 
   hack = () => {
@@ -63,113 +70,88 @@ class App extends Component {
   };
 
   render() {
-    if (
-      window.innerWidth < 975 ||
-      navigator.userAgent.match(
-        /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i
-      ) != null
-    ) {
-      return (
-        <div className={styles.appTransform}>
+    return (
+      <div className={styles.app}>
+        <img
+          src="https://i.gifer.com/C6Zz.gif"
+          alt=""
+          className={styles.globe}
+        />
+        <Terminal
+          simpleDragAndDrop={this.simpleDragAndDrop}
+          dndPermission={this.state.dndPermission}
+          setHackInterval={this.setHackInterval}
+        />
+
+        {this.state.hackInt > 20 && (
+          <TerminalAuto
+            simpleDragAndDrop={this.simpleDragAndDrop}
+            dndPermission={this.state.dndPermission}
+          />
+        )}
+        {this.state.hackInt > 30 && (
+          <HackingFbi
+            simpleDragAndDrop={this.simpleDragAndDrop}
+            dndPermission={this.state.dndPermission}
+            hack={this.hack}
+          />
+        )}
+        {this.state.hacked === true && (
           <img
             src={ilyaSvg}
             alt=""
-            className={[styles.ilyahacker, styles.ilyahackerTransform].join(
-              " "
-            )}
+            className={styles.ilyahacker}
+            ref={ref => {
+              this.ilyahacker = ref;
+            }}
+            onMouseDown={e => {
+              this.simpleDragAndDrop(
+                this.ilyahacker,
+                e,
+                this.state.dndPermission
+              );
+            }}
           />
-          <PrivateData
-            transform={true}
-            simpleDragAndDrop={this.simpleDragAndDrop}
-          />
-          <Projects
-            transform={true}
-            simpleDragAndDrop={this.simpleDragAndDrop}
-          />
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <img
-            src="https://i.gifer.com/C6Zz.gif"
-            alt=""
-            className={styles.globe}
-          />
-          <Terminal
-            simpleDragAndDrop={this.simpleDragAndDrop}
-            dndPermission={true}
-            setHackInterval={this.setHackInterval}
-          />
+        )}
 
-          {this.state.hackInt > 20 && (
-            <TerminalAuto
-              simpleDragAndDrop={this.simpleDragAndDrop}
-              dndPermission={true}
-            />
-          )}
-          {this.state.hackInt > 30 && (
-            <HackingFbi
-              simpleDragAndDrop={this.simpleDragAndDrop}
-              dndPermission={true}
-              hack={this.hack}
-            />
-          )}
-          {this.state.hacked === true && (
-            <img
-              src={ilyaSvg}
-              alt=""
-              className={styles.ilyahacker}
-              ref={ref => {
-                this.ilyahacker = ref;
-              }}
-              onMouseDown={e => {
-                this.simpleDragAndDrop(this.ilyahacker, e, true);
-              }}
-            />
-          )}
+        <Projects
+          simpleDragAndDrop={this.simpleDragAndDrop}
+          dndPermission={this.state.dndPermission}
+          hacked={this.state.hacked}
+        />
 
-          {this.state.hacked === true && (
-            <Projects
-              simpleDragAndDrop={this.simpleDragAndDrop}
-              dndPermission={true}
-            />
-          )}
+        <PrivateData
+          simpleDragAndDrop={this.simpleDragAndDrop}
+          dndPermission={this.state.dndPermission}
+          hacked={this.state.hacked}
+        />
 
-          {this.state.hacked === true && (
-            <PrivateData
-              simpleDragAndDrop={this.simpleDragAndDrop}
-              dndPermission={true}
-            />
-          )}
-
-          <div className={styles.footer}>
-            <a
-              href="https://github.com/IlyaAgarishev/hacker-portfolio"
-              target="_blank"
-              className={styles.githubLink}
-              rel="noopener noreferrer"
-            >
-              github
-            </a>
-            <div
-              className={styles.playSong}
-              onClick={() => {
-                this.song.togglePlay();
-              }}
-            >
-              song
-            </div>
-            <AudioPlayer
-              src={song}
-              hidePlayer={true}
-              loop={true}
-              ref={c => (this.song = c)}
-            />
+        <div className={styles.footer}>
+          <a
+            href="https://github.com/IlyaAgarishev/hacker-portfolio"
+            target="_blank"
+            className={styles.githubLink}
+            rel="noopener noreferrer"
+          >
+            github
+          </a>
+          <div
+            className={styles.playSong}
+            onClick={() => {
+              this.song.togglePlay();
+            }}
+          >
+            song
           </div>
+          <AudioPlayer
+            src={song}
+            hidePlayer={true}
+            loop={true}
+            ref={c => (this.song = c)}
+          />
         </div>
-      );
-    }
+      </div>
+    );
   }
 }
 

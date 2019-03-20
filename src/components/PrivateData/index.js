@@ -1,38 +1,25 @@
 import React, { Component } from "react";
 import styles from "./index.module.css";
+import PropTypes from "prop-types";
 
-class PrivateData extends Component {
-  render() {
+const PrivateData = props => {
+  let privateData;
+  const { hacked, simpleDragAndDrop, dndPermission } = { ...props };
+  if (hacked) {
     return (
       <div
-        className={
-          this.props.transform
-            ? [styles.privateData, styles.privateDataTransform].join(" ")
-            : styles.privateData
-        }
+        className={styles.privateData}
         ref={ref => {
-          this.privateData = ref;
+          privateData = ref;
         }}
       >
         <div
           className={styles.privateDataBorder}
           onMouseDown={e => {
-            this.props.simpleDragAndDrop(
-              this.privateData,
-              e,
-              this.props.dndPermission
-            );
+            simpleDragAndDrop(privateData, e, dndPermission);
           }}
         />
-        <div
-          className={
-            this.props.transform
-              ? [styles.privateDataList, styles.privateDataListTransform].join(
-                  " "
-                )
-              : styles.privateDataList
-          }
-        >
+        <div className={styles.privateDataList}>
           <a
             href="https://github.com/IlyaAgarishev"
             target="_blank"
@@ -93,7 +80,15 @@ class PrivateData extends Component {
         </div>
       </div>
     );
+  } else {
+    return null;
   }
-}
+};
+
+PrivateData.propTypes = {
+  simpleDragAndDrop: PropTypes.func.isRequired,
+  dndPermission: PropTypes.bool.isRequired,
+  hacked: PropTypes.bool.isRequired
+};
 
 export default PrivateData;

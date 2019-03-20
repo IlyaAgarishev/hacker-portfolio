@@ -8,13 +8,6 @@
   border: 1px solid #053972;
 }
 
-.privateDataTransform {
-  margin-top: 10px;
-  width: 100%;
-  left: 0;
-  position: relative;
-}
-
 .privateDataBorder {
   border-top: 20px solid #053972;
 }
@@ -23,12 +16,22 @@
   padding: 10px;
 }
 
-.privateDataListTransform {
-  display: flex;
-  justify-content: space-around;
-}
-
 .icon {
   width: 30px;
   margin-right: 15px;
+}
+
+@media only screen and (max-width: 975px) {
+  .privateData{
+    margin-top: 10px;
+    width: 100%;
+    left: 0;
+    position: relative;
+    order: 2;
+  }
+
+  .privateDataList{
+    display: flex;
+  justify-content: space-around;
+  }
 }

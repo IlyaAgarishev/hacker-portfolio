@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./index.module.css";
 import codeOne from "../../codesnippets/code_one.js";
+import PropTypes from "prop-types";
 
 class Terminal extends Component {
   constructor(props) {
@@ -54,5 +55,11 @@ class Terminal extends Component {
     );
   }
 }
+
+Terminal.propTypes = {
+  simpleDragAndDrop: PropTypes.func.isRequired,
+  dndPermission: PropTypes.bool.isRequired,
+  setHackInterval: PropTypes.func.isRequired
+};
 
 export default Terminal;

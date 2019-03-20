@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import styles from "./index.module.css";
 import codeTwo from "../../codesnippets/code_two.js";
+import PropTypes from "prop-types";
 
-class Terminal extends Component {
+class TerminalAuto extends Component {
   constructor(props) {
     super(props);
     this.state = { textareaValue: "" };
@@ -49,4 +50,9 @@ class Terminal extends Component {
   }
 }
 
-export default Terminal;
+TerminalAuto.propTypes = {
+  simpleDragAndDrop: PropTypes.func.isRequired,
+  dndPermission: PropTypes.bool.isRequired
+};
+
+export default TerminalAuto;
