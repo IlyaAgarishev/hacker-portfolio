@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App 1`] = `
+<div
+  className="app"
+>
+  <img
+    alt="globe"
+    className="globe"
+    src="https://i.gifer.com/C6Zz.gif"
+  />
+  <Terminal
+    setHackInterval={[Function]}
+    simpleDragAndDrop={[Function]}
+  />
+  <Projects
+    dndPermission="granted"
+    hacked={false}
+    simpleDragAndDrop={[Function]}
+  />
+  <PrivateData
+    dndPermission="granted"
+    hacked={false}
+    simpleDragAndDrop={[Function]}
+  />
+  <Footer />
+</div>
+`;
+
+exports[`Footer 1`] = `
+<div
+  className="footer"
+>
+  <a
+    className="githubLink"
+    href="https://github.com/IlyaAgarishev/hacker-portfolio"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    github
+  </a>
+  <div
+    className="playSong"
+    onClick={[Function]}
+  >
+    song
+  </div>
+  <H5AudioPlayer
+    autoPlay={false}
+    hidePlayer={true}
+    listenInterval={1000}
+    loop={true}
+    muted={false}
+    preload="auto"
+    progressUpdateInterval={500}
+    src="song.mp3"
+    volume={1}
+  />
+</div>
+`;
+
+exports[`Hacking Fbi 1`] = `
+<div
+  className="hackingFbi"
+  onMouseDown={[Function]}
+>
+  <div
+    className="hackingFbiText"
+  >
+    HACKING FBI DATABASE
+  </div>
+  <div
+    className="hackingProcess"
+  >
+    ‍
+  </div>
+</div>
+`;
+
+exports[`Private Data 1`] = `
+<div
+  className="privateData"
+>
+  <div
+    className="privateDataBorder"
+    onMouseDown={[Function]}
+  />
+  <div
+    className="privateDataList"
+  >
+    <a
+      href="https://github.com/IlyaAgarishev"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <img
+        alt="github"
+        className="icon"
+        src="https://svgshare.com/i/Aeu.svg"
+      />
+    </a>
+    <a
+      href="https://t.me/jamezdean"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <img
+        alt="telegram"
+        className="icon"
+        src="https://svgshare.com/i/AdA.svg"
+      />
+    </a>
+    <a
+      href="https://api.whatsapp.com/send?phone=89826161073"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <img
+        alt="whatsapp"
+        className="icon"
+        src="https://svgshare.com/i/AeM.svg"
+      />
+    </a>
+    <a
+      href="https://www.facebook.com/ilya.agarishev"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <img
+        alt="facebook"
+        className="icon"
+        src="https://svgshare.com/i/AeB.svg"
+      />
+    </a>
+    <a
+      href="https://vk.com/jamezdean"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <img
+        alt="vk"
+        className="icon"
+        src="https://svgshare.com/i/Acc.svg"
+      />
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Projects 1`] = `
+<div
+  className="projectsWrapper"
+>
+  <div
+    className="projectsBorderTop"
+    onMouseDown={[Function]}
+  />
+  <div
+    className="projects"
+  >
+    <div
+      className="projectsText"
+      onMouseDown={[Function]}
+    >
+      ILYA'S PROJECTS
+    </div>
+    <div
+      className="projectsList"
+    >
+      <a
+        className="project"
+        href="https://www.sinnlist.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        sinnlist
+      </a>
+      <a
+        className="project"
+        href="https://github.com/IlyaAgarishev/qiqi"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        qiqi
+      </a>
+      <a
+        className="project"
+        href="https://github.com/IlyaAgarishev/naumen-test-task"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        wiki-search
+      </a>
+      <a
+        className="project"
+        href="https://github.com/IlyaAgarishev/react-random-quiz"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        react-random-quiz
+      </a>
+      <a
+        className="project"
+        href="https://github.com/IlyaAgarishev/hacker-portfolio"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        hacker-portfolio
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Terminal 1`] = `
+<textarea
+  className="terminal"
+  onMouseDown={[Function]}
+  placeholder="Start typing..."
+  readOnly={true}
+  value=""
+/>
+`;
+
+exports[`Terminal Auto 1`] = `
+<textarea
+  className="terminalAuto"
+  onMouseDown={[Function]}
+  placeholder="Start typing..."
+  readOnly={true}
+  value=""
+/>
+`;
