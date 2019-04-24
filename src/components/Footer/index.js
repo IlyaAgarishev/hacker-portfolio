@@ -15,6 +15,14 @@ const Footer = () => {
       >
         github
       </a>
+      <a
+        href="https://t.me/jamezdean"
+        target="_blank"
+        className={styles.telegram}
+        rel="noopener noreferrer"
+      >
+        telegram
+      </a>
       <div
         className={styles.playSong}
         onClick={() => {

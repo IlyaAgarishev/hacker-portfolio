@@ -3,7 +3,6 @@ import Terminal from "../Terminal";
 import TerminalAuto from "../TerminalAuto";
 import HackingFbi from "../HackingFbi";
 import Projects from "../Projects";
-import PrivateData from "../PrivateData";
 import ilyaSvg from "../../img/ilyahacker.svg";
 import styles from "./index.module.css";
 import Footer from "../Footer";
@@ -64,10 +63,6 @@ class App extends Component {
               onMouseDown={e => {
                 simpleDragAndDrop(this.ilyahacker, e, this.state.dndPermission);
               }}
-            />
-            <PrivateData
-              simpleDragAndDrop={simpleDragAndDrop}
-              dndPermission={this.state.dndPermission}
             />
 
             <Projects
