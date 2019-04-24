@@ -1,87 +1,77 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./index.module.css";
 import PropTypes from "prop-types";
 
 const Projects = props => {
-  let projectsWrapper;
-  const { hacked, simpleDragAndDrop, dndPermission } = { ...props };
-  if (hacked) {
-    return (
+  const { simpleDragAndDrop, dndPermission } = { ...props };
+  let projectsWrapper = useRef(null);
+  return (
+    <div className={styles.projectsWrapper} ref={projectsWrapper}>
       <div
-        className={styles.projectsWrapper}
-        ref={ref => {
-          projectsWrapper = ref;
+        className={styles.projectsBorderTop}
+        onMouseDown={e => {
+          simpleDragAndDrop(projectsWrapper, e, dndPermission);
         }}
-      >
+      />
+      <div className={styles.projects}>
         <div
-          className={styles.projectsBorderTop}
+          className={styles.projectsText}
           onMouseDown={e => {
             simpleDragAndDrop(projectsWrapper, e, dndPermission);
           }}
-        />
-        <div className={styles.projects}>
-          <div
-            className={styles.projectsText}
-            onMouseDown={e => {
-              simpleDragAndDrop(projectsWrapper, e, dndPermission);
-            }}
+        >
+          ILYA'S PROJECTS
+        </div>
+        <div className={styles.projectsList}>
+          <a
+            href="https://www.sinnlist.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.project}
           >
-            ILYA'S PROJECTS
-          </div>
-          <div className={styles.projectsList}>
-            <a
-              href="https://www.sinnlist.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.project}
-            >
-              sinnlist
-            </a>
-            <a
-              href="https://github.com/IlyaAgarishev/qiqi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.project}
-            >
-              qiqi
-            </a>
-            <a
-              href="https://github.com/IlyaAgarishev/naumen-test-task"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.project}
-            >
-              wiki-search
-            </a>
-            <a
-              href="https://github.com/IlyaAgarishev/react-random-quiz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.project}
-            >
-              react-random-quiz
-            </a>
-            <a
-              href="https://github.com/IlyaAgarishev/hacker-portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.project}
-            >
-              hacker-portfolio
-            </a>
-          </div>
+            sinnlist
+          </a>
+          <a
+            href="https://github.com/IlyaAgarishev/qiqi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.project}
+          >
+            qiqi
+          </a>
+          <a
+            href="https://github.com/IlyaAgarishev/naumen-test-task"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.project}
+          >
+            wiki-search
+          </a>
+          <a
+            href="https://github.com/IlyaAgarishev/react-random-quiz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.project}
+          >
+            react-random-quiz
+          </a>
+          <a
+            href="https://github.com/IlyaAgarishev/hacker-portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.project}
+          >
+            hacker-portfolio
+          </a>
         </div>
       </div>
-    );
-  } else {
-    return null;
-  }
+    </div>
+  );
 };
 
 Projects.propTypes = {
   simpleDragAndDrop: PropTypes.func.isRequired,
-  dndPermission: PropTypes.string.isRequired,
-  hacked: PropTypes.bool.isRequired
+  dndPermission: PropTypes.string.isRequired
 };
 
 export default Projects;

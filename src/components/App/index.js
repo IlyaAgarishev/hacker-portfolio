@@ -53,30 +53,29 @@ class App extends Component {
         )}
 
         {this.state.hacked === true && (
-          <img
-            src={ilyaSvg}
-            alt=""
-            className={styles.ilyahacker}
-            ref={ref => {
-              this.ilyahacker = ref;
-            }}
-            onMouseDown={e => {
-              simpleDragAndDrop(this.ilyahacker, e, this.state.dndPermission);
-            }}
-          />
+          <div>
+            <img
+              src={ilyaSvg}
+              alt=""
+              className={styles.ilyahacker}
+              ref={ref => {
+                this.ilyahacker = ref;
+              }}
+              onMouseDown={e => {
+                simpleDragAndDrop(this.ilyahacker, e, this.state.dndPermission);
+              }}
+            />
+            <PrivateData
+              simpleDragAndDrop={simpleDragAndDrop}
+              dndPermission={this.state.dndPermission}
+            />
+
+            <Projects
+              simpleDragAndDrop={simpleDragAndDrop}
+              dndPermission={this.state.dndPermission}
+            />
+          </div>
         )}
-
-        <Projects
-          simpleDragAndDrop={simpleDragAndDrop}
-          dndPermission={this.state.dndPermission}
-          hacked={this.state.hacked}
-        />
-
-        <PrivateData
-          simpleDragAndDrop={simpleDragAndDrop}
-          dndPermission={this.state.dndPermission}
-          hacked={this.state.hacked}
-        />
 
         <Footer />
       </div>
