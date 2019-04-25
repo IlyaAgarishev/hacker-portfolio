@@ -1,46 +1,39 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./index.module.css";
 import codeTwo from "../../codesnippets/code_two.js";
 import PropTypes from "prop-types";
 
-class TerminalAuto extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { textareaValue: "" };
-  }
+const TerminalAuto = props => {
+  const [textareaValue, setTextareaValue] = useState("");
+  const [int, setInt] = useState(0);
+  const terminalAuto = useRef(null);
+  const { simpleDragAndDrop } = { ...props };
 
-  componentDidMount() {
-    let i = 0;
-    setInterval(() => {
-      this.setState({
-        textareaValue: this.state.textareaValue + codeTwo.slice(i, i + 5)
-      });
-      i += 5;
-      if (i > codeTwo.length) {
-        i = 0;
-      }
-      this.terminalAuto.scrollTop = this.terminalAuto.scrollHeight;
-    }, 1);
-  }
+  const speed = 0.5;
 
-  render() {
-    return (
-      <textarea
-        className={styles.terminalAuto}
-        placeholder={"Start typing..."}
-        ref={ref => {
-          this.terminalAuto = ref;
-        }}
-        readOnly
-        onMouseDown={e => {
-          e.preventDefault();
-          this.props.simpleDragAndDrop(this.terminalAuto, e);
-        }}
-        value={this.state.textareaValue}
-      />
-    );
-  }
-}
+  useEffect(() => {
+    setTextareaValue(textareaValue + codeTwo.slice(int, int + speed));
+    setInt(int + speed);
+    if (int > codeTwo.length) {
+      setInt(0);
+    }
+    terminalAuto.current.scrollTop = terminalAuto.current.scrollHeight;
+  });
+
+  return (
+    <textarea
+      className={styles.terminalAuto}
+      placeholder={"Start typing..."}
+      ref={terminalAuto}
+      readOnly
+      onMouseDown={e => {
+        e.preventDefault();
+        simpleDragAndDrop(terminalAuto.current, e);
+      }}
+      value={textareaValue}
+    />
+  );
+};
 
 TerminalAuto.propTypes = {
   simpleDragAndDrop: PropTypes.func.isRequired
