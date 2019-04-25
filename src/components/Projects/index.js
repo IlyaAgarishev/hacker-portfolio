@@ -1,12 +1,15 @@
-import React, { useRef } from "react";
+import React from "react";
 import styles from "./index.module.css";
 import PropTypes from "prop-types";
 
 const Projects = props => {
   const { simpleDragAndDrop, dndPermission } = { ...props };
-  let projectsWrapper = useRef(null);
+  let projectsWrapper;
   return (
-    <div className={styles.projectsWrapper} ref={projectsWrapper}>
+    <div
+      className={styles.projectsWrapper}
+      ref={ref => (projectsWrapper = ref)}
+    >
       <div
         className={styles.projectsBorderTop}
         onMouseDown={e => {
