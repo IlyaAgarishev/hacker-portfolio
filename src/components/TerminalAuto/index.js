@@ -6,18 +6,23 @@ import PropTypes from "prop-types";
 const TerminalAuto = props => {
   const [textareaValue, setTextareaValue] = useState("");
   const [int, setInt] = useState(0);
+  const [times, setTimes] = useState(0);
   const terminalAuto = useRef(null);
   const { simpleDragAndDrop } = { ...props };
 
   const speed = 0.5;
 
   useEffect(() => {
-    setTextareaValue(textareaValue + codeTwo.slice(int, int + speed));
-    setInt(int + speed);
-    if (int > codeTwo.length) {
-      setInt(0);
+    if (times !== 3) {
+      setTextareaValue(textareaValue + codeTwo.slice(int, int + speed));
+      setInt(int + speed);
+      if (int > codeTwo.length) {
+        setInt(0);
+        setTimes(times + 1);
+        console.log(times);
+      }
+      terminalAuto.current.scrollTop = terminalAuto.current.scrollHeight;
     }
-    terminalAuto.current.scrollTop = terminalAuto.current.scrollHeight;
   });
 
   return (

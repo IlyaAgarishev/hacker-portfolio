@@ -1,71 +1,42 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./index.module.css";
 import PropTypes from "prop-types";
+import { projects } from "../../projects";
 
 const Projects = props => {
   const { simpleDragAndDrop, dndPermission } = { ...props };
-  let projectsWrapper;
+  const projectsWrapper = useRef(null);
   return (
-    <div
-      className={styles.projectsWrapper}
-      ref={ref => (projectsWrapper = ref)}
-    >
+    <div className={styles.projectsWrapper} ref={projectsWrapper}>
       <div
         className={styles.projectsBorderTop}
         onMouseDown={e => {
-          simpleDragAndDrop(projectsWrapper, e, dndPermission);
+          simpleDragAndDrop(projectsWrapper.current, e, dndPermission);
         }}
       />
       <div className={styles.projects}>
         <div
           className={styles.projectsText}
           onMouseDown={e => {
-            simpleDragAndDrop(projectsWrapper, e, dndPermission);
+            simpleDragAndDrop(projectsWrapper.current, e, dndPermission);
           }}
         >
           ILYA'S PROJECTS
         </div>
         <div className={styles.projectsList}>
-          <a
-            href="https://www.sinnlist.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.project}
-          >
-            sinnlist
-          </a>
-          <a
-            href="https://github.com/IlyaAgarishev/qiqi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.project}
-          >
-            qiqi
-          </a>
-          <a
-            href="https://github.com/IlyaAgarishev/naumen-test-task"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.project}
-          >
-            wiki-search
-          </a>
-          <a
-            href="https://github.com/IlyaAgarishev/react-random-quiz"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.project}
-          >
-            react-random-quiz
-          </a>
-          <a
-            href="https://github.com/IlyaAgarishev/hacker-portfolio"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.project}
-          >
-            hacker-portfolio
-          </a>
+          {projects.map((element, index) => {
+            return (
+              <a
+                href={element.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.project}
+                key={index}
+              >
+                {element.name}
+              </a>
+            );
+          })}
         </div>
       </div>
     </div>
