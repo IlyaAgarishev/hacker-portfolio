@@ -30,14 +30,14 @@ const App = () => {
 
       <Terminal setPreHacked={setPreHacked} auto={false} />
 
-      {preHacked === true && (
+      {preHacked && (
         <div>
           <Terminal auto={true} />
           <HackingFbi setHacked={setHacked} hacked={hacked} />
         </div>
       )}
 
-      {hacked === true && (
+      {hacked && (
         <div>
           <img
             src={ilyaSvg}

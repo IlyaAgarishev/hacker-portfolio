@@ -1,16 +1,20 @@
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .globe {
-  width: 10%;
-  position: absolute;
-  top: 45%;
-  left: 45%;
+  width: 200px;
 }
 
 .ilyahacker {
-  width: 30%;
+  width: 600px;
+  top: 20px;
+  left: 800px;
   background: #053972;
   position: absolute;
-  left: 45%;
-  top: 20px;
   border: 1px solid #053972;
   border-top: 20px solid #053972;
 }
@@ -19,6 +23,8 @@
   .app {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: unset;
     padding: 2px;
   }
   .globe {

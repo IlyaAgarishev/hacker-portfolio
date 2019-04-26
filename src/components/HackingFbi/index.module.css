@@ -1,13 +1,12 @@
 .hackingFbi {
   color: rgb(241, 0, 0);
   position: absolute;
-  top: 73%;
-  left: 35%;
+  top: 700px;
+  left: 700px;
   font-size: 30px;
   background: black;
   border: 1px solid rgb(0, 255, 0);
   padding: 10px;
-  width: 31%;
   border-top: 20px solid rgb(0, 255, 0);
   user-select: none;
 }
@@ -23,9 +22,8 @@
   user-select: none;
 }
 
-@media only screen and (max-width: 1245px) {
+@media only screen and (max-width: 975px) {
   .hackingFbi {
-    left: 40%;
-    font-size: 25px !important;
+    display: none;
   }
 }

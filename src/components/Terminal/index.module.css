@@ -1,6 +1,6 @@
 .terminal {
-  width: 40%;
-  height: 38%;
+  width: 650px;
+  height: 300px;
   position: absolute;
   top: 20px;
   left: 20px;
@@ -15,9 +15,9 @@
 }
 
 .terminalAuto {
-  width: 30%;
-  top: 49%;
-  height: 35%;
+  width: 500px;
+  height: 300px;
+  top: 400px;
   left: 20px;
 }
 

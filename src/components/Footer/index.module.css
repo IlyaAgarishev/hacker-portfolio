@@ -1,8 +1,9 @@
 .footer {
+  padding: 5px;
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 30px;
+  height: 20px;
   background: rgb(0, 255, 0);
   display: flex;
   align-items: center;
@@ -13,14 +14,14 @@
 .telegram,
 .playSong,
 .skip {
-  height: 70%;
+  height: 100%;
   border-radius: 2px;
   margin-left: 5px;
   display: flex;
   cursor: pointer;
   justify-content: center;
   align-items: center;
-  width: 70px;
+  padding: 0px 10px;
   text-decoration: none;
   border: 1px solid black;
   color: black;
