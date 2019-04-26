@@ -33,11 +33,7 @@ const App = () => {
       {preHacked === true && (
         <div>
           <Terminal auto={true} />
-          <HackingFbi
-            simpleDragAndDrop={simpleDragAndDrop}
-            setHacked={setHacked}
-            hacked={hacked}
-          />
+          <HackingFbi setHacked={setHacked} hacked={hacked} />
         </div>
       )}
 

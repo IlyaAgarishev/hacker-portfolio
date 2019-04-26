@@ -1,13 +1,15 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import styles from "./index.module.css";
 import PropTypes from "prop-types";
 import { useInterval } from "../../utils";
+import { MyContext } from "../../context";
 
 const HackingFbi = props => {
   const [hackingProcess, setHackingProcess] = useState("");
   const [intTime, setIntTime] = useState(200);
   const hackingFbi = useRef(null);
-  const { simpleDragAndDrop, setHacked, hacked } = { ...props };
+  const { setHacked, hacked } = { ...props };
+  const simpleDragAndDrop = useContext(MyContext);
 
   useInterval(() => {
     setHackingProcess(hackingProcess + "☠/");
@@ -42,7 +44,6 @@ const HackingFbi = props => {
 };
 
 HackingFbi.propTypes = {
-  simpleDragAndDrop: PropTypes.func.isRequired,
   setHacked: PropTypes.func.isRequired,
   hacked: PropTypes.bool.isRequired
 };
