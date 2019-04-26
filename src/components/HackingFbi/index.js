@@ -1,15 +1,13 @@
-import React, { useState, useRef, useEffect, useContext } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "./index.module.css";
 import PropTypes from "prop-types";
-import { useInterval } from "../../utils";
-import { MyContext } from "../../context";
+import { useInterval, simpleDragAndDrop } from "../../utils";
 
 const HackingFbi = props => {
   const [hackingProcess, setHackingProcess] = useState("");
   const [intTime, setIntTime] = useState(200);
   const hackingFbi = useRef(null);
   const { setHacked, hacked } = { ...props };
-  const simpleDragAndDrop = useContext(MyContext);
 
   useInterval(() => {
     setHackingProcess(hackingProcess + "☠/");
