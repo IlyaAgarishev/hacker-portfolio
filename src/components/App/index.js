@@ -28,15 +28,11 @@ const App = () => {
         className={styles.globe}
       />
 
-      <Terminal
-        simpleDragAndDrop={simpleDragAndDrop}
-        setPreHacked={setPreHacked}
-        auto={false}
-      />
+      <Terminal setPreHacked={setPreHacked} auto={false} />
 
       {preHacked === true && (
         <div>
-          <Terminal simpleDragAndDrop={simpleDragAndDrop} auto={true} />
+          <Terminal auto={true} />
           <HackingFbi
             simpleDragAndDrop={simpleDragAndDrop}
             setHacked={setHacked}

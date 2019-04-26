@@ -1,16 +1,18 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import styles from "./index.module.css";
 import codeOne from "../../codesnippets/code_one.js";
 import PropTypes from "prop-types";
+import { MyContext } from "../../context";
 
 const Terminal = props => {
   const [textareaValue, setTextareaValue] = useState("");
   const [int, setInt] = useState(0);
   const [times, setTimes] = useState(0);
 
-  const { simpleDragAndDrop, setPreHacked, auto } = { ...props };
+  const { setPreHacked, auto } = { ...props };
 
   const terminal = useRef(null);
+  const simpleDragAndDrop = useContext(MyContext);
   useEffect(() => {
     if (!auto) {
       document.onkeydown = () => {
@@ -57,7 +59,6 @@ const Terminal = props => {
 };
 
 Terminal.propTypes = {
-  simpleDragAndDrop: PropTypes.func.isRequired,
   auto: PropTypes.bool.isRequired
 };
 
