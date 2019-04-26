@@ -14,6 +14,13 @@
   cursor: auto;
 }
 
+.terminalAuto {
+  width: 30%;
+  top: 49%;
+  height: 35%;
+  left: 20px;
+}
+
 .terminal::-webkit-scrollbar {
   display: none;
 }

@@ -16,6 +16,7 @@ const Footer = props => {
       >
         github
       </a>
+
       <a
         href="https://t.me/jamezdean"
         target="_blank"
@@ -24,6 +25,7 @@ const Footer = props => {
       >
         telegram
       </a>
+
       <div
         className={styles.playSong}
         onClick={() => {
@@ -32,6 +34,7 @@ const Footer = props => {
       >
         song
       </div>
+
       <AudioPlayer
         src={songSrc}
         hidePlayer={true}
@@ -39,14 +42,9 @@ const Footer = props => {
         ref={ref => (song = ref)}
       />
 
-      <a
-        target="_blank"
-        className={styles.skip}
-        rel="noopener noreferrer"
-        onClick={() => setHackInt(40)}
-      >
+      <div className={styles.skip} onClick={() => setHackInt(40)}>
         skip
-      </a>
+      </div>
     </div>
   );
 };

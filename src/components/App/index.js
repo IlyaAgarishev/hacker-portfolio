@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import Terminal from "../Terminal";
-import TerminalAuto from "../TerminalAuto";
 import HackingFbi from "../HackingFbi";
 import Projects from "../Projects";
 import ilyaSvg from "../../img/ilyahacker.svg";
@@ -33,16 +32,23 @@ const App = () => {
         simpleDragAndDrop={simpleDragAndDrop}
         setHackInt={setHackInt}
         hackInt={hackInt}
+        auto={false}
       />
 
-      {hackInt > 20 && <TerminalAuto simpleDragAndDrop={simpleDragAndDrop} />}
-
-      {hackInt > 30 && (
-        <HackingFbi
-          simpleDragAndDrop={simpleDragAndDrop}
-          setHacked={setHacked}
-          hacked={hacked}
-        />
+      {hackInt > 20 && (
+        <div>
+          <Terminal
+            simpleDragAndDrop={simpleDragAndDrop}
+            setHackInt={setHackInt}
+            hackInt={hackInt}
+            auto={true}
+          />
+          <HackingFbi
+            simpleDragAndDrop={simpleDragAndDrop}
+            setHacked={setHacked}
+            hacked={hacked}
+          />
+        </div>
       )}
 
       {hacked === true && (
