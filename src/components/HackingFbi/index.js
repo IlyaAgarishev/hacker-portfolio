@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "./index.module.css";
 import PropTypes from "prop-types";
 import { useInterval } from "../../utils";
@@ -6,19 +6,21 @@ import { useInterval } from "../../utils";
 const HackingFbi = props => {
   const [hackingProcess, setHackingProcess] = useState("");
   const [intTime, setIntTime] = useState(200);
-  const [timeoutHook, setTimeoutHook] = useState(0);
   const hackingFbi = useRef(null);
   const { simpleDragAndDrop, setHacked, hacked } = { ...props };
 
   useInterval(() => {
     setHackingProcess(hackingProcess + "☠/");
-    setTimeoutHook(timeoutHook + 1);
-    if (timeoutHook === 10) {
+  }, intTime);
+
+  useEffect(() => {
+    setTimeout(() => {
       setIntTime(null);
       setHackingProcess("ACCESS GRANTED");
       setHacked(true);
-    }
-  }, intTime);
+    }, 2000);
+  }, []);
+
   return (
     <div
       onMouseDown={e => {
