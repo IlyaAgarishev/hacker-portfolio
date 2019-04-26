@@ -32,6 +32,7 @@ const TerminalAuto = props => {
       onMouseDown={e => {
         e.preventDefault();
         simpleDragAndDrop(terminalAuto.current, e);
+        terminalAuto.current.scrollTop = terminalAuto.current.scrollHeight;
       }}
       value={textareaValue}
     />

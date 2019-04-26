@@ -1,24 +1,5 @@
 import { useEffect, useRef } from "react";
 
-// useInterval hook
-export const useInterval = (callback, delay) => {
-  const savedCallback = useRef();
-
-  useEffect(() => {
-    savedCallback.current = callback;
-  }, [callback]);
-
-  useEffect(() => {
-    function tick() {
-      savedCallback.current();
-    }
-    if (delay !== null) {
-      let id = setInterval(tick, delay);
-      return () => clearInterval(id);
-    }
-  }, [delay]);
-};
-
 // dnd logic
 export const getCoords = element => {
   let box = element.getBoundingClientRect();
@@ -43,8 +24,6 @@ export const simpleDragAndDrop = (item, e, dndPermission) => {
   document.body.appendChild(item);
   moveAt(e);
 
-  item.style.zIndex = 1000;
-
   document.onmousemove = e => {
     moveAt(e);
   };
@@ -57,6 +36,25 @@ export const simpleDragAndDrop = (item, e, dndPermission) => {
   item.ondragstart = () => {
     return false;
   };
+};
+
+// useInterval hook
+export const useInterval = (callback, delay) => {
+  const savedCallback = useRef();
+
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
 };
 
 // projects

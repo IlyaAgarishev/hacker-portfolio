@@ -64,7 +64,7 @@ const App = () => {
         </div>
       )}
 
-      <Footer />
+      <Footer setHackInt={setHackInt} />
     </div>
   );
 };

@@ -3,7 +3,8 @@ import styles from "./index.module.css";
 import AudioPlayer from "react-h5-audio-player";
 import songSrc from "../../audio/song.mp3";
 
-const Footer = () => {
+const Footer = props => {
+  const { setHackInt } = { ...props };
   let song;
   return (
     <div className={styles.footer}>
@@ -37,6 +38,15 @@ const Footer = () => {
         loop={true}
         ref={ref => (song = ref)}
       />
+
+      <a
+        target="_blank"
+        className={styles.skip}
+        rel="noopener noreferrer"
+        onClick={() => setHackInt(40)}
+      >
+        skip
+      </a>
     </div>
   );
 };
