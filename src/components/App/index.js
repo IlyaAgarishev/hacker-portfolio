@@ -29,7 +29,11 @@ const App = () => {
         className={styles.globe}
       />
 
-      <Terminal simpleDragAndDrop={simpleDragAndDrop} setHackInt={setHackInt} />
+      <Terminal
+        simpleDragAndDrop={simpleDragAndDrop}
+        setHackInt={setHackInt}
+        hackInt={hackInt}
+      />
 
       {hackInt > 20 && <TerminalAuto simpleDragAndDrop={simpleDragAndDrop} />}
 

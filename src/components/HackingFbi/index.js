@@ -43,7 +43,8 @@ const HackingFbi = props => {
 
 HackingFbi.propTypes = {
   simpleDragAndDrop: PropTypes.func.isRequired,
-  setHacked: PropTypes.func.isRequired
+  setHacked: PropTypes.func.isRequired,
+  hacked: PropTypes.bool.isRequired
 };
 
 export default HackingFbi;

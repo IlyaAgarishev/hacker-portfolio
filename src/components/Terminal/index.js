@@ -7,7 +7,7 @@ const Terminal = props => {
   const [textareaValue, setTextareaValue] = useState("");
   const [int, setInt] = useState(0);
   const [terminalHackInt, setTerminalHackInt] = useState(0);
-  const { simpleDragAndDrop, setHackInt } = { ...props };
+  const { simpleDragAndDrop, setHackInt, hackInt } = { ...props };
 
   const terminal = useRef(null);
 
@@ -16,7 +16,9 @@ const Terminal = props => {
       setTextareaValue(textareaValue + codeOne.slice(int, int + 5));
       setInt(int + 5);
       setTerminalHackInt(terminalHackInt + 1);
-      setHackInt(terminalHackInt);
+      if (hackInt <= 30) {
+        setHackInt(terminalHackInt);
+      }
       if (int > codeOne.length) {
         setInt(0);
       }
