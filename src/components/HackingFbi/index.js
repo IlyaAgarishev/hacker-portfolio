@@ -2,24 +2,42 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from "./index.module.css";
 import PropTypes from "prop-types";
 
+function useInterval(callback, delay) {
+  const savedCallback = useRef();
+
+  // Remember the latest function.
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // Set up the interval.
+  useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+}
+
 const HackingFbi = props => {
   const [hackingProcess, setHackingProcess] = useState("");
-  // const [hacked, setHacked] = useState(false);
+  const [intTime, setIntTime] = useState(200);
+  const [timeoutHook, setTimeoutHook] = useState(0);
   const hackingFbi = useRef(null);
   const { simpleDragAndDrop, setHacked, hacked } = { ...props };
 
-  useEffect(() => {
-    // let hackingLoading = setInterval(() => {
-    //   setHackingProcess(hackingProcess + "☠/");
-    // }, 200);
-    // setTimeout(() => {
-    //   clearInterval(hackingLoading);
-    //   setHackingProcess("ACCESS GRANTED");
-    //   setHacked(true);
-    //   setHacked(true);
-    // }, 2100);
-  });
-
+  useInterval(() => {
+    setHackingProcess(hackingProcess + "☠/");
+    setTimeoutHook(timeoutHook + 1);
+    if (timeoutHook === 10) {
+      setIntTime(null);
+      setHackingProcess("ACCESS GRANTED");
+      setHacked(true);
+    }
+  }, intTime);
   return (
     <div
       onMouseDown={e => {

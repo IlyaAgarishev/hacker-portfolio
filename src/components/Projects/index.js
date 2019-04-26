@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import styles from "./index.module.css";
 import PropTypes from "prop-types";
-import { projects } from "../../projects";
+import { projects } from "../../dnd";
 
 const Projects = props => {
   const { simpleDragAndDrop, dndPermission } = { ...props };
