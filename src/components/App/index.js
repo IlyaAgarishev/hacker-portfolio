@@ -6,7 +6,7 @@ import Projects from "../Projects";
 import ilyaSvg from "../../img/ilyahacker.svg";
 import styles from "./index.module.css";
 import Footer from "../Footer";
-import { simpleDragAndDrop } from "../../dnd.js";
+import { simpleDragAndDrop } from "../../utils";
 
 const App = () => {
   const [hackInt, setHackInt] = useState(0);
