@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Terminal from "../Terminal";
 import TerminalAuto from "../TerminalAuto";
 import HackingFbi from "../HackingFbi";
@@ -8,74 +8,61 @@ import styles from "./index.module.css";
 import Footer from "../Footer";
 import { simpleDragAndDrop } from "../../dnd.js";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { hackInt: 0, hacked: false, dndPermission: "granted" };
-  }
+const App = () => {
+  const [hackInt, setHackInt] = useState(0);
+  const [hacked, setHacked] = useState(false);
+  const [dndPermission, setDndPermission] = useState("granted");
+  const ilyahacker = useRef(null);
 
-  componentWillMount() {
+  useEffect(() => {
     if (window.innerWidth < 975) {
-      this.hack(true);
-      this.setState({ dndPermission: "denied" });
+      setHacked(true);
+      setDndPermission("denied");
     }
-  }
+  });
 
-  hack = () => {
-    this.setState({ hacked: true });
-  };
+  return (
+    <div className={styles.app}>
+      <img
+        src="https://i.gifer.com/C6Zz.gif"
+        alt="globe"
+        className={styles.globe}
+      />
 
-  setHackInterval = hackInt => {
-    this.setState({ hackInt: hackInt });
-  };
+      <Terminal simpleDragAndDrop={simpleDragAndDrop} setHackInt={setHackInt} />
 
-  render() {
-    return (
-      <div className={styles.app}>
-        <img
-          src="https://i.gifer.com/C6Zz.gif"
-          alt="globe"
-          className={styles.globe}
-        />
+      {hackInt > 20 && <TerminalAuto simpleDragAndDrop={simpleDragAndDrop} />}
 
-        <Terminal
+      {hackInt > 30 && (
+        <HackingFbi
           simpleDragAndDrop={simpleDragAndDrop}
-          setHackInterval={this.setHackInterval}
+          setHacked={setHacked}
+          hacked={hacked}
         />
+      )}
 
-        {this.state.hackInt > 20 && (
-          <TerminalAuto simpleDragAndDrop={simpleDragAndDrop} />
-        )}
+      {hacked === true && (
+        <div>
+          <img
+            src={ilyaSvg}
+            alt=""
+            className={styles.ilyahacker}
+            ref={ilyahacker}
+            onMouseDown={e => {
+              simpleDragAndDrop(ilyahacker.current, e, dndPermission);
+            }}
+          />
 
-        {this.state.hackInt > 30 && (
-          <HackingFbi simpleDragAndDrop={simpleDragAndDrop} hack={this.hack} />
-        )}
+          <Projects
+            simpleDragAndDrop={simpleDragAndDrop}
+            dndPermission={dndPermission}
+          />
+        </div>
+      )}
 
-        {this.state.hacked === true && (
-          <div>
-            <img
-              src={ilyaSvg}
-              alt=""
-              className={styles.ilyahacker}
-              ref={ref => {
-                this.ilyahacker = ref;
-              }}
-              onMouseDown={e => {
-                simpleDragAndDrop(this.ilyahacker, e, this.state.dndPermission);
-              }}
-            />
-
-            <Projects
-              simpleDragAndDrop={simpleDragAndDrop}
-              dndPermission={this.state.dndPermission}
-            />
-          </div>
-        )}
-
-        <Footer />
-      </div>
-    );
-  }
-}
+      <Footer />
+    </div>
+  );
+};
 
 export default App;

@@ -9,7 +9,6 @@ const TerminalAuto = props => {
   const [times, setTimes] = useState(0);
   const terminalAuto = useRef(null);
   const { simpleDragAndDrop } = { ...props };
-
   const speed = 0.5;
 
   useEffect(() => {
@@ -19,7 +18,6 @@ const TerminalAuto = props => {
       if (int > codeTwo.length) {
         setInt(0);
         setTimes(times + 1);
-        console.log(times);
       }
       terminalAuto.current.scrollTop = terminalAuto.current.scrollHeight;
     }

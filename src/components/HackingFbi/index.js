@@ -1,55 +1,48 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./index.module.css";
 import PropTypes from "prop-types";
 
-class HackingFbi extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { hackingProcess: "", hacked: false };
-  }
+const HackingFbi = props => {
+  const [hackingProcess, setHackingProcess] = useState("");
+  // const [hacked, setHacked] = useState(false);
+  const hackingFbi = useRef(null);
+  const { simpleDragAndDrop, setHacked, hacked } = { ...props };
 
-  componentDidMount() {
-    let hackingLoading = setInterval(() => {
-      this.setState({
-        hackingProcess: this.state.hackingProcess + "☠/"
-      });
-    }, 200);
+  useEffect(() => {
+    // let hackingLoading = setInterval(() => {
+    //   setHackingProcess(hackingProcess + "☠/");
+    // }, 200);
+    // setTimeout(() => {
+    //   clearInterval(hackingLoading);
+    //   setHackingProcess("ACCESS GRANTED");
+    //   setHacked(true);
+    //   setHacked(true);
+    // }, 2100);
+  });
 
-    setTimeout(() => {
-      clearInterval(hackingLoading);
-      this.setState({ hackingProcess: "ACCESS GRANTED" });
-      this.setState({ hacked: true });
-      this.props.hack();
-    }, 2100);
-  }
-
-  render() {
-    return (
-      <div
-        onMouseDown={e => {
-          this.props.simpleDragAndDrop(this.hackingFbi, e);
-        }}
-        className={
-          this.state.hacked
-            ? [styles.hackingFbi, styles.accessGranted].join(" ")
-            : styles.hackingFbi
-        }
-        ref={ref => (this.hackingFbi = ref)}
-      >
-        <div className={styles.hackingFbiText}>
-          {this.state.hacked ? "" : "HACKING FBI DATABASE"}
-        </div>
-        <div className={styles.hackingProcess}>
-          ‍{this.state.hackingProcess}
-        </div>
+  return (
+    <div
+      onMouseDown={e => {
+        simpleDragAndDrop(hackingFbi.current, e);
+      }}
+      className={
+        hacked
+          ? [styles.hackingFbi, styles.accessGranted].join(" ")
+          : styles.hackingFbi
+      }
+      ref={hackingFbi}
+    >
+      <div className={styles.hackingFbiText}>
+        {hacked ? "" : "HACKING FBI DATABASE"}
       </div>
-    );
-  }
-}
+      <div className={styles.hackingProcess}>‍{hackingProcess}</div>
+    </div>
+  );
+};
 
 HackingFbi.propTypes = {
   simpleDragAndDrop: PropTypes.func.isRequired,
-  hack: PropTypes.func.isRequired
+  setHacked: PropTypes.func.isRequired
 };
 
 export default HackingFbi;

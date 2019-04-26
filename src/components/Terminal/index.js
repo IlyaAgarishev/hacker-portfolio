@@ -7,16 +7,16 @@ const Terminal = props => {
   const [textareaValue, setTextareaValue] = useState("");
   const [int, setInt] = useState(0);
   const [terminalHackInt, setTerminalHackInt] = useState(0);
-  const { simpleDragAndDrop, setHackInterval } = { ...props };
+  const { simpleDragAndDrop, setHackInt } = { ...props };
 
-  let terminal = useRef(null);
+  const terminal = useRef(null);
 
   useEffect(() => {
     document.onkeydown = () => {
       setTextareaValue(textareaValue + codeOne.slice(int, int + 5));
       setInt(int + 5);
       setTerminalHackInt(terminalHackInt + 1);
-      setHackInterval(terminalHackInt);
+      setHackInt(terminalHackInt);
       if (int > codeOne.length) {
         setInt(0);
       }
@@ -42,7 +42,7 @@ const Terminal = props => {
 
 Terminal.propTypes = {
   simpleDragAndDrop: PropTypes.func.isRequired,
-  setHackInterval: PropTypes.func.isRequired
+  setHackInt: PropTypes.func.isRequired
 };
 
 export default Terminal;
