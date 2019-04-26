@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import styles from "./index.module.css";
 import PropTypes from "prop-types";
-import { projects } from "../../utils";
+import { projects, simpleDragAndDrop } from "../../utils";
 
 const Projects = props => {
-  const { simpleDragAndDrop, dndPermission } = { ...props };
+  const { dndPermission } = { ...props };
   const projectsWrapper = useRef(null);
   return (
     <div className={styles.projectsWrapper} ref={projectsWrapper}>
@@ -44,7 +44,6 @@ const Projects = props => {
 };
 
 Projects.propTypes = {
-  simpleDragAndDrop: PropTypes.func.isRequired,
   dndPermission: PropTypes.string.isRequired
 };
 

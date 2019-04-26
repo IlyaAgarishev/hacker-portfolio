@@ -49,10 +49,7 @@ const App = () => {
             }}
           />
 
-          <Projects
-            simpleDragAndDrop={simpleDragAndDrop}
-            dndPermission={dndPermission}
-          />
+          <Projects dndPermission={dndPermission} />
         </div>
       )}
 
