@@ -6,23 +6,20 @@ import PropTypes from "prop-types";
 const Terminal = props => {
   const [textareaValue, setTextareaValue] = useState("");
   const [int, setInt] = useState(0);
-  const [terminalHackInt, setTerminalHackInt] = useState(0);
-  const { simpleDragAndDrop, setHackInt, hackInt, auto } = { ...props };
   const [times, setTimes] = useState(0);
 
-  const terminal = useRef(null);
+  const { simpleDragAndDrop, setPreHacked, auto } = { ...props };
 
+  const terminal = useRef(null);
   useEffect(() => {
     if (!auto) {
       document.onkeydown = () => {
         setTextareaValue(textareaValue + codeOne.slice(int, int + 5));
         setInt(int + 5);
-        setTerminalHackInt(terminalHackInt + 1);
-        if (hackInt <= 30) {
-          setHackInt(terminalHackInt);
-        }
         if (int > codeOne.length) {
           setInt(0);
+        } else if (int === 100) {
+          setPreHacked(true);
         }
         terminal.current.scrollTop = terminal.current.scrollHeight;
       };
@@ -61,8 +58,6 @@ const Terminal = props => {
 
 Terminal.propTypes = {
   simpleDragAndDrop: PropTypes.func.isRequired,
-  setHackInt: PropTypes.func.isRequired,
-  hackInt: PropTypes.number.isRequired,
   auto: PropTypes.bool.isRequired
 };
 

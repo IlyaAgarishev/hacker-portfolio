@@ -8,7 +8,7 @@ import Footer from "../Footer";
 import { simpleDragAndDrop } from "../../utils";
 
 const App = () => {
-  const [hackInt, setHackInt] = useState(0);
+  const [preHacked, setPreHacked] = useState(false);
   const [hacked, setHacked] = useState(false);
   const [dndPermission, setDndPermission] = useState("granted");
   const ilyahacker = useRef(null);
@@ -30,19 +30,13 @@ const App = () => {
 
       <Terminal
         simpleDragAndDrop={simpleDragAndDrop}
-        setHackInt={setHackInt}
-        hackInt={hackInt}
+        setPreHacked={setPreHacked}
         auto={false}
       />
 
-      {hackInt > 20 && (
+      {preHacked === true && (
         <div>
-          <Terminal
-            simpleDragAndDrop={simpleDragAndDrop}
-            setHackInt={setHackInt}
-            hackInt={hackInt}
-            auto={true}
-          />
+          <Terminal simpleDragAndDrop={simpleDragAndDrop} auto={true} />
           <HackingFbi
             simpleDragAndDrop={simpleDragAndDrop}
             setHacked={setHacked}
@@ -70,7 +64,7 @@ const App = () => {
         </div>
       )}
 
-      <Footer setHackInt={setHackInt} />
+      <Footer setPreHacked={setPreHacked} />
     </div>
   );
 };

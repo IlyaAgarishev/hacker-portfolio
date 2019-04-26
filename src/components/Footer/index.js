@@ -2,9 +2,10 @@ import React from "react";
 import styles from "./index.module.css";
 import AudioPlayer from "react-h5-audio-player";
 import songSrc from "../../audio/song.mp3";
+import PropTypes from "prop-types";
 
 const Footer = props => {
-  const { setHackInt } = { ...props };
+  const { setPreHacked } = { ...props };
   let song;
   return (
     <div className={styles.footer}>
@@ -42,11 +43,15 @@ const Footer = props => {
         ref={ref => (song = ref)}
       />
 
-      <div className={styles.skip} onClick={() => setHackInt(40)}>
+      <div className={styles.skip} onClick={() => setPreHacked(true)}>
         skip
       </div>
     </div>
   );
+};
+
+Footer.propTypes = {
+  setPreHacked: PropTypes.func.isRequired
 };
 
 export default Footer;
