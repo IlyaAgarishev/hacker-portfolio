@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./index.module.css";
 import AudioPlayer from "react-h5-audio-player";
 import songSrc from "../../audio/song.mp3";
@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 const Footer = props => {
   const { setPreHacked } = { ...props };
-  let song;
+  const song = useRef(null);
   return (
     <div className={styles.footer}>
       <div className={styles.contacts}>
@@ -40,22 +40,17 @@ const Footer = props => {
         <div
           className={styles.link}
           onClick={() => {
-            song.togglePlay();
+            song.current.togglePlay();
           }}
         >
           song
         </div>
-        <AudioPlayer
-          src={songSrc}
-          hidePlayer={true}
-          loop={true}
-          ref={ref => (song = ref)}
-        />
 
         <div className={styles.link} onClick={() => setPreHacked(true)}>
           skip
         </div>
       </div>
+      <AudioPlayer src={songSrc} hidePlayer={true} loop={true} ref={song} />
     </div>
   );
 };
