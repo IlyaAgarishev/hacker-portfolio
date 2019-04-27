@@ -9,42 +9,52 @@ const Footer = props => {
   let song;
   return (
     <div className={styles.footer}>
-      <a
-        href="https://github.com/IlyaAgarishev/hacker-portfolio"
-        target="_blank"
-        className={styles.githubLink}
-        rel="noopener noreferrer"
-      >
-        github
-      </a>
+      <div className={styles.contacts}>
+        <a
+          href="https://github.com/IlyaAgarishev/hacker-portfolio"
+          target="_blank"
+          className={[styles.link, styles.github].join(" ")}
+          rel="noopener noreferrer"
+        >
+          github
+        </a>
 
-      <a
-        href="https://t.me/jamezdean"
-        target="_blank"
-        className={styles.telegram}
-        rel="noopener noreferrer"
-      >
-        telegram
-      </a>
+        <a
+          href="https://t.me/jamezdean"
+          target="_blank"
+          className={[styles.link, styles.telegram].join(" ")}
+          rel="noopener noreferrer"
+        >
+          telegram
+        </a>
 
-      <div
-        className={styles.playSong}
-        onClick={() => {
-          song.togglePlay();
-        }}
-      >
-        song
+        <a
+          href="mailto:ilya.business@inbox.ru"
+          className={[styles.link, styles.email].join(" ")}
+        >
+          email
+        </a>
       </div>
 
-      <AudioPlayer
-        src={songSrc}
-        hidePlayer={true}
-        loop={true}
-        ref={ref => (song = ref)}
-      />
+      <div className={styles.features}>
+        <div
+          className={styles.link}
+          onClick={() => {
+            song.togglePlay();
+          }}
+        >
+          song
+        </div>
+        <AudioPlayer
+          src={songSrc}
+          hidePlayer={true}
+          loop={true}
+          ref={ref => (song = ref)}
+        />
 
-      <div className={styles.skip} onClick={() => setPreHacked(true)}>
-        skip
+        <div className={styles.link} onClick={() => setPreHacked(true)}>
+          skip
+        </div>
       </div>
     </div>
   );
