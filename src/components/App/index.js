@@ -49,11 +49,16 @@ const App = () => {
             }}
           />
 
+          <div className={styles.footerMobile}>
+            <Footer setPreHacked={setPreHacked} />
+          </div>
+
           <Projects dndPermission={dndPermission} />
         </div>
       )}
-
-      <Footer setPreHacked={setPreHacked} />
+      <div className={styles.footerDesktop}>
+        <Footer setPreHacked={setPreHacked} />
+      </div>
     </div>
   );
 };
