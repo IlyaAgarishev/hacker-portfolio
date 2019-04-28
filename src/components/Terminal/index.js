@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./index.module.css";
-import codeOne from "../../codesnippets/code_one.js";
+import hackscript from "../../hackscript";
 import PropTypes from "prop-types";
 import { simpleDragAndDrop } from "../../utils";
 
@@ -18,9 +18,9 @@ const Terminal = props => {
   useEffect(() => {
     if (!auto) {
       document.onkeydown = () => {
-        setTextareaValue(textareaValue + codeOne.slice(int, int + 5));
+        setTextareaValue(textareaValue + hackscript.slice(int, int + 5));
         setInt(int + 5);
-        if (int > codeOne.length) {
+        if (int > hackscript.length) {
           setInt(0);
         } else if (int === 100) {
           setPreHacked(true);
@@ -29,9 +29,9 @@ const Terminal = props => {
       };
     } else {
       if (times !== 3) {
-        setTextareaValue(textareaValue + codeOne.slice(int, int + 0.3));
+        setTextareaValue(textareaValue + hackscript.slice(int, int + 0.3));
         setInt(int + 0.3);
-        if (int > codeOne.length) {
+        if (int > hackscript.length) {
           setInt(0);
           setTimes(times + 1);
         }
