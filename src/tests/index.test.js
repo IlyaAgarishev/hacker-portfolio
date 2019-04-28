@@ -17,7 +17,12 @@ const props = {
   HackingFbi_hacked: {
     setHacked: jest.fn(),
     hacked: true
-  }
+  },
+  Footer: {
+    setPreHacked: jest.fn()
+  },
+  Terminal_notAuto: { setPreHacked: jest.fn(), auto: false },
+  Terminal_auto: { setPreHacked: jest.fn(), auto: true }
 };
 
 // utils testing
