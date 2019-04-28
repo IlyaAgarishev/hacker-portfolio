@@ -9,7 +9,15 @@ import Projects from "../components/Projects";
 
 // tools
 const props = {
-  Projects: { dndPermission: "granted" }
+  Projects: { dndPermission: "granted" },
+  HackingFbi_notHacked: {
+    setHacked: jest.fn(),
+    hacked: false
+  },
+  HackingFbi_hacked: {
+    setHacked: jest.fn(),
+    hacked: true
+  }
 };
 
 // utils testing
@@ -60,4 +68,14 @@ test("Projects component renders projects hrefs correctly", () => {
         .props()
     ).toHaveProperty("href", element.href);
   });
+});
+
+test("Hacking Fbi renders right string when not hacked", () => {
+  const component = mount(<HackingFbi {...props.HackingFbi_notHacked} />);
+  expect(component.find(".hackingFbiText").text()).toBe("HACKING FBI DATABASE");
+});
+
+test("Hacking Fbi renders right string when  hacked", () => {
+  const component = mount(<HackingFbi {...props.HackingFbi_hacked} />);
+  expect(component.find(".hackingFbiText").text()).toBe("");
 });
