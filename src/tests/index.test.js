@@ -3,9 +3,14 @@ import { mount, render, shallow } from "enzyme";
 import App from "../components/App";
 import Terminal from "../components/Terminal";
 import Footer from "../components/Footer";
-import { simpleDragAndDrop, getCoords } from "../utils.js";
+import { simpleDragAndDrop, getCoords, projects } from "../utils.js";
 import HackingFbi from "../components/HackingFbi";
 import Projects from "../components/Projects";
+
+// tools
+const props = {
+  Projects: { dndPermission: "granted" }
+};
 
 // utils testing
 
@@ -33,5 +38,26 @@ test("simple dnd reurns null if dndPermission is denied", () => {
 });
 
 // Components testing
+test("Projects component renders projects name correctly", () => {
+  const component = mount(<Projects {...props.Projects} />);
+  projects.forEach((element, index) => {
+    expect(
+      component
+        .find(".project")
+        .at(index)
+        .text()
+    ).toBe(element.name);
+  });
+});
 
-// Snapshots
+test("Projects component renders projects hrefs correctly", () => {
+  const component = mount(<Projects {...props.Projects} />);
+  projects.forEach((element, index) => {
+    expect(
+      component
+        .find(".project")
+        .at(index)
+        .props()
+    ).toHaveProperty("href", element.href);
+  });
+});
