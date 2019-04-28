@@ -8,10 +8,13 @@ const Terminal = props => {
   const [textareaValue, setTextareaValue] = useState("");
   const [int, setInt] = useState(0);
   const [times, setTimes] = useState(0);
-
+  const terminal = useRef(null);
   const { setPreHacked, auto } = { ...props };
 
-  const terminal = useRef(null);
+  const scrollDown = () => {
+    terminal.current.scrollTop = terminal.current.scrollHeight;
+  };
+
   useEffect(() => {
     if (!auto) {
       document.onkeydown = () => {
@@ -22,7 +25,7 @@ const Terminal = props => {
         } else if (int === 100) {
           setPreHacked(true);
         }
-        terminal.current.scrollTop = terminal.current.scrollHeight;
+        scrollDown();
       };
     } else {
       if (times !== 3) {
@@ -32,7 +35,7 @@ const Terminal = props => {
           setInt(0);
           setTimes(times + 1);
         }
-        terminal.current.scrollTop = terminal.current.scrollHeight;
+        scrollDown();
       }
     }
   });
@@ -50,7 +53,7 @@ const Terminal = props => {
       onMouseDown={e => {
         e.preventDefault();
         simpleDragAndDrop(terminal.current, e);
-        terminal.current.scrollTop = terminal.current.scrollHeight;
+        scrollDown();
       }}
       value={textareaValue}
     />
