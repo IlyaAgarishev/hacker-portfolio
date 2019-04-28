@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshots 1`] = `
+<div
+  className="app"
+>
+  <img
+    alt="globe"
+    className="globe"
+    src="https://i.gifer.com/C6Zz.gif"
+  />
+  <Terminal
+    auto={false}
+    setPreHacked={[Function]}
+  />
+  <div
+    className="footerDesktop"
+  >
+    <Footer
+      setPreHacked={[Function]}
+    />
+  </div>
+</div>
+`;
+
+exports[`snapshots 2`] = `
+<div
+  className="projectsWrapper"
+>
+  <div
+    className="projectsBorderTop"
+    onMouseDown={[Function]}
+  />
+  <div
+    className="projects"
+  >
+    <div
+      className="projectsText"
+      onMouseDown={[Function]}
+    >
+      ILYA'S PROJECTS
+    </div>
+    <div
+      className="projectsList"
+    >
+      <a
+        className="project"
+        href="https://www.sinnlist.com/"
+        key="0"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        sinnlist
+      </a>
+      <a
+        className="project"
+        href="https://github.com/IlyaAgarishev/qiqi"
+        key="1"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        qiqi
+      </a>
+      <a
+        className="project"
+        href="https://github.com/IlyaAgarishev/naumen-test-task"
+        key="2"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        wiki-search
+      </a>
+      <a
+        className="project"
+        href="https://github.com/IlyaAgarishev/react-random-quiz"
+        key="3"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        react-random-quiz
+      </a>
+      <a
+        className="project"
+        href="https://github.com/IlyaAgarishev/hacker-portfolio"
+        key="4"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        hacker-portfolio
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`snapshots 3`] = `
+<div
+  className="hackingFbi"
+  onMouseDown={[Function]}
+>
+  <div
+    className="hackingFbiText"
+  >
+    HACKING FBI DATABASE
+  </div>
+  <div
+    className="hackingProcess"
+  >
+    ‍
+  </div>
+</div>
+`;
+
+exports[`snapshots 4`] = `
+<div
+  className="hackingFbi accessGranted"
+  onMouseDown={[Function]}
+>
+  <div
+    className="hackingFbiText"
+  />
+  <div
+    className="hackingProcess"
+  >
+    ‍
+  </div>
+</div>
+`;
+
+exports[`snapshots 5`] = `
+<div
+  className="footer"
+>
+  <div
+    className="contacts"
+  >
+    <a
+      className="link github"
+      href="https://github.com/IlyaAgarishev/hacker-portfolio"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      github
+    </a>
+    <a
+      className="link telegram"
+      href="https://t.me/jamezdean"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      telegram
+    </a>
+    <a
+      className="link email"
+      href="mailto:ilya.business@inbox.ru"
+    >
+      email
+    </a>
+  </div>
+  <div
+    className="features"
+  >
+    <div
+      className="link"
+      onClick={[Function]}
+    >
+      song
+    </div>
+    <div
+      className="link"
+      onClick={[Function]}
+    >
+      skip
+    </div>
+  </div>
+  <H5AudioPlayer
+    autoPlay={false}
+    hidePlayer={true}
+    listenInterval={1000}
+    loop={true}
+    muted={false}
+    preload="auto"
+    progressUpdateInterval={500}
+    src="song.mp3"
+    volume={1}
+  />
+</div>
+`;
+
+exports[`snapshots 6`] = `
+<textarea
+  className="terminal"
+  onMouseDown={[Function]}
+  placeholder="Start typing..."
+  readOnly={true}
+  value=""
+/>
+`;
+
+exports[`snapshots 7`] = `
+<textarea
+  className="terminal terminalAuto"
+  onMouseDown={[Function]}
+  placeholder="Start typing..."
+  readOnly={true}
+  value=""
+/>
+`;

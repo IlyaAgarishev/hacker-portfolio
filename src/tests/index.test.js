@@ -84,3 +84,19 @@ test("Hacking Fbi renders right string when  hacked", () => {
   const component = mount(<HackingFbi {...props.HackingFbi_hacked} />);
   expect(component.find(".hackingFbiText").text()).toBe("");
 });
+
+// snapshots
+
+test("snapshots", () => {
+  expect(shallow(<App />)).toMatchSnapshot();
+  expect(shallow(<Projects {...props.Projects} />)).toMatchSnapshot();
+  expect(
+    shallow(<HackingFbi {...props.HackingFbi_notHacked} />)
+  ).toMatchSnapshot();
+  expect(
+    shallow(<HackingFbi {...props.HackingFbi_hacked} />)
+  ).toMatchSnapshot();
+  expect(shallow(<Footer {...props.Footer} />)).toMatchSnapshot();
+  expect(shallow(<Terminal {...props.Terminal_notAuto} />)).toMatchSnapshot();
+  expect(shallow(<Terminal {...props.Terminal_auto} />)).toMatchSnapshot();
+});
