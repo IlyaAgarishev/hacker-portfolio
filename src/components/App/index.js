@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Terminal from "../Terminal";
 import HackingFbi from "../HackingFbi";
 import Projects from "../Projects";
+import CV from "../CV";
 import ilyaSvg from "../../img/ilyahacker.svg";
 import styles from "./index.module.css";
 import Footer from "../Footer";
@@ -52,7 +53,7 @@ const App = () => {
           <div className={styles.footerMobile}>
             <Footer setPreHacked={setPreHacked} />
           </div>
-
+          <CV dndPermission={dndPermission} />
           <Projects dndPermission={dndPermission} />
         </div>
       )}
