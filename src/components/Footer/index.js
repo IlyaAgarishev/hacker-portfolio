@@ -3,37 +3,29 @@ import styles from "./index.module.css";
 import AudioPlayer from "react-h5-audio-player";
 import songSrc from "../../audio/song.mp3";
 import PropTypes from "prop-types";
+import data from "../../data.json";
 
 const Footer = props => {
   const { setPreHacked } = { ...props };
   const song = useRef(null);
+
   return (
     <div className={styles.footer}>
       <div className={styles.contacts}>
-        <a
-          href="https://github.com/IlyaAgarishev/hacker-portfolio"
-          target="_blank"
-          className={[styles.link, styles.github].join(" ")}
-          rel="noopener noreferrer"
-        >
-          github
-        </a>
-
-        <a
-          href="https://t.me/jamezdean"
-          target="_blank"
-          className={[styles.link, styles.telegram].join(" ")}
-          rel="noopener noreferrer"
-        >
-          telegram
-        </a>
-
-        <a
-          href="mailto:ilya.business@inbox.ru"
-          className={[styles.link, styles.email].join(" ")}
-        >
-          email
-        </a>
+        {data.contacts.map((element, index) => {
+          return (
+            <a
+              href={element.link}
+              target="_blank"
+              className={styles.link}
+              rel="noopener noreferrer"
+              style={{ background: element.background, color: "white" }}
+              key={index}
+            >
+              {element.name}
+            </a>
+          );
+        })}
       </div>
 
       <div className={styles.features}>

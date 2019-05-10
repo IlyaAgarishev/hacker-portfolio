@@ -28,20 +28,8 @@
   transition: 0.2s all ease;
 }
 
-.github {
-  background: #24292e;
-  color: white;
+.link:first-child {
   margin-left: 5px;
-}
-
-.telegram {
-  background: #295d7e;
-  color: white;
-}
-
-.email {
-  background: #458666;
-  color: white;
 }
 
 @media only screen and (max-width: 975px) {

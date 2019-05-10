@@ -56,37 +56,3 @@ export const useInterval = (callback, delay) => {
     }
   }, [delay]);
 };
-
-// projects
-export const projects = [
-  { name: "sinnlist", href: "https://www.sinnlist.com/" },
-  { name: "qiqi", href: "https://github.com/IlyaAgarishev/qiqi" },
-  {
-    name: "wiki-search",
-    href: "https://github.com/IlyaAgarishev/naumen-test-task"
-  },
-  {
-    name: "react-random-quiz",
-    href: "https://github.com/IlyaAgarishev/react-random-quiz"
-  },
-  {
-    name: "hacker-portfolio",
-    href: "https://github.com/IlyaAgarishev/hacker-portfolio"
-  }
-];
-
-// cv
-export const cvs = [
-  {
-    link:
-      "https://docs.google.com/document/d/142OxFRdnhCFJyLc5UonQ1EemnXvyQ-486sjrHld0-pc/edit?usp=sharing",
-    lang: "eng",
-    doc: "cv"
-  },
-  {
-    link:
-      "https://docs.google.com/document/d/1MAblzAUc7u_KkSmUeeH4iWXzo3BPEtnplIyX2P8ZbI8/edit?usp=sharing",
-    lang: "ru",
-    doc: "резюме"
-  }
-];

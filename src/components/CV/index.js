@@ -2,7 +2,8 @@ import React, { useRef } from "react";
 import cv from "../../img/cv.svg";
 import styles from "./index.module.css";
 import PropTypes from "prop-types";
-import { simpleDragAndDrop, cvs } from "../../utils";
+import { simpleDragAndDrop } from "../../utils";
+import data from "../../data.json";
 
 const CV = props => {
   const { dndPermission } = { ...props };
@@ -16,7 +17,7 @@ const CV = props => {
         }}
       />
       <div className={styles.cvs}>
-        {cvs.map((element, index) => (
+        {data.cvs.map((element, index) => (
           <a
             className={styles.cv}
             href={element.link}

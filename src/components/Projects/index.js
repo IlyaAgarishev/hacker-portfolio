@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 import styles from "./index.module.css";
 import PropTypes from "prop-types";
-import { projects, simpleDragAndDrop } from "../../utils";
+import { simpleDragAndDrop } from "../../utils";
+import data from "../../data.json";
 
 const Projects = props => {
   const { dndPermission } = { ...props };
@@ -24,7 +25,7 @@ const Projects = props => {
           ILYA'S PROJECTS
         </div>
         <div className={styles.projectsList}>
-          {projects.map((element, index) => {
+          {data.projects.map((element, index) => {
             return (
               <a
                 href={element.href}
