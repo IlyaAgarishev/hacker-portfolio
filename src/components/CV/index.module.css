@@ -35,3 +35,31 @@
   background: #053972;
   color: black;
 }
+
+@media only screen and (max-width: 975px) {
+  .cvWrapper {
+    margin-top: 10px;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  .borderTop {
+    display: none;
+  }
+  .cvs {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .cv {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none;
+  }
+
+  .cvImg {
+    display: none;
+  }
+}

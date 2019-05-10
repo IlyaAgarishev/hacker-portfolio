@@ -24,8 +24,9 @@ const CV = props => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <img src={cv} alt="cv" />
-            {element.lang}
+            <img src={cv} alt="cv" className={styles.cvImg} />
+
+            {window.innerWidth > 975 ? element.lang : element.doc}
           </a>
         ))}
       </div>

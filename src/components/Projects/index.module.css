@@ -5,6 +5,7 @@
   right: 20px;
   display: flex;
   flex-direction: column;
+  border: 1px solid #053972;
 }
 
 .projectsBorderTop {
@@ -14,7 +15,6 @@
 
 .projects {
   background: black;
-  border: 1px solid #053972;
   color: #053972;
   font-size: 30px;
   font-weight: 900;

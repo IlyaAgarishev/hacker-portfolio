@@ -80,11 +80,13 @@ export const cvs = [
   {
     link:
       "https://docs.google.com/document/d/142OxFRdnhCFJyLc5UonQ1EemnXvyQ-486sjrHld0-pc/edit?usp=sharing",
-    lang: "eng"
+    lang: "eng",
+    doc: "cv"
   },
   {
     link:
       "https://docs.google.com/document/d/1MAblzAUc7u_KkSmUeeH4iWXzo3BPEtnplIyX2P8ZbI8/edit?usp=sharing",
-    lang: "ru"
+    lang: "ru",
+    doc: "резюме"
   }
 ];
