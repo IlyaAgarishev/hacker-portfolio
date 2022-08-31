@@ -1,7 +1,7 @@
 # hacker-portfolio
 
 This is my portfolio site. Use laptop for better experience 🙂  
-Demo: https://ilyagarishev.surge.sh/
+Demo: https://hacker-portfolioo.netlify.app/
 
 ![first](https://i.imgur.com/ZLfU5X3.gif)
 
